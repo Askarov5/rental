@@ -1,19 +1,21 @@
-import './assets/styles/globals.css'
-
-export const metadata = {
-  title: "Zillow.KG | Properties for sales and rent",
-  description: " Find your perfect property easily"
-}
+import Footer from "@/components/Footer";
+import "../assets/styles/globals.css";
+import Navbar from "@/components/Navbar";
+import AuthProvider from "@/providers/AuthProvider";
 
 const MainLayout = ({ children }) => {
   return (
-    <html lang="en">
-      <head></head>
-      <body>
-        <div>{children}</div>
-      </body>
-    </html>
-  )
-}
+    <AuthProvider>
+      <html lang="en">
+        <head></head>
+        <body>
+          <Navbar />
+          <main>{children}</main>
+          <Footer />
+        </body>
+      </html>
+    </AuthProvider>
+  );
+};
 
-export default MainLayout
+export default MainLayout;
