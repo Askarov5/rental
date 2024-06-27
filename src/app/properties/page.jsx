@@ -2,7 +2,7 @@ import PropertyCard from "@/components/PropertyCard";
 import { fetchProperties } from "@/utils/request";
 
 const PropertiesPage = async () => {
-    const properties = await fetchProperties();
+  const properties = await fetchProperties();
 
   return (
     <section className="px-4 py-6">
@@ -11,7 +11,7 @@ const PropertiesPage = async () => {
           {properties.length === 0 ? (
             <h3>No Properties Found</h3>
           ) : (
-            properties.map((p) => <PropertyCard property = {p} key={p._id}/>)
+            properties.map((p) => <PropertyCard property={p} key={p._id} />)
           )}
         </div>
       </div>

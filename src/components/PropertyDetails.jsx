@@ -63,13 +63,11 @@ const PropertyDetails = ({ property }) => {
             <span className="hidden sm:inline"> Baths</span>
           </p>
           <p>
-            {<FaRulerCombined className="inline" />}{" "}
-            {property.square_feet} <span className="hidden sm:inline"> sqft</span>
+            {<FaRulerCombined className="inline" />} {property.square_feet}{" "}
+            <span className="hidden sm:inline"> sqft</span>
           </p>
         </div>
-        <p className="text-gray-500 mb-4 text-center">
-          {property.description}
-        </p>
+        <p className="text-gray-500 mb-4 text-center">{property.description}</p>
       </div>
 
       <div className="bg-white p-6 rounded-lg shadow-md mt-6">

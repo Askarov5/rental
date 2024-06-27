@@ -1,6 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
-import {FaBed, FaBath, FaRulerCombined, FaMoneyBill, FaMapMarker} from 'react-icons/fa'
+import {
+  FaBed,
+  FaBath,
+  FaRulerCombined,
+  FaMoneyBill,
+  FaMapMarker,
+} from "react-icons/fa";
 
 const PropertyCard = ({ property }) => {
   const { rates } = property;
@@ -33,7 +39,7 @@ const PropertyCard = ({ property }) => {
 
         <div className="flex justify-center gap-4 text-gray-500 mb-4">
           <p>
-            <FaBed className="inline mr-2"/> {property.beds}{" "}
+            <FaBed className="inline mr-2" /> {property.beds}{" "}
             <span className="md:hidden lg:inline">Beds</span>
           </p>
           <p>
@@ -66,7 +72,10 @@ const PropertyCard = ({ property }) => {
         <div className="flex flex-col lg:flex-row justify-between mb-4">
           <div className="flex align-middle gap-2 mb-4 lg:mb-0">
             <FaMapMarker className=" text-orange-700 mt-1" />
-            <span className="text-orange-700"> {property.location.city}{' '} {property.location.state}</span>
+            <span className="text-orange-700">
+              {" "}
+              {property.location.city} {property.location.state}
+            </span>
           </div>
           <Link
             href={`/properties/${property._id}`}
