@@ -1,7 +1,7 @@
 import connectDB from "@/config/database";
 import Property from "@/models/Properties";
 import { getSessionUser } from "@/utils/getSessionUser";
-import { get } from "mongoose";
+import cloudinary from "@/config/cloudinary";
 
 // GET /api/properties
 export const GET = async (request) => {
@@ -69,19 +69,38 @@ export const POST = async (request) => {
       owner: userId,
     };
 
+    // Upload image(s) to Cloudinary
+    const imageUploadPromises = [];
+    for (const image of images) {
+      const imageBuffer = await image.arrayBuffer();
+      const imageArray = Array.from(new Uint8Array(imageBuffer));
+      const imageData = Buffer.from(imageArray);
+
+      // Convert the image data to base64
+      const imageBase64 = imageData.toString("base64");
+      // Make request to upload to Cloudinary
+      const result = await cloudinary.uploader.upload(
+        `data:image/jpeg;base64,${imageBase64}`,
+        {
+          folder: "zillow",
+        }
+      );
+
+      imageUploadPromises.push(result.secure_url);
+
+      // Wait for all images to upload
+      const uploadedImages = await Promise.all(imageUploadPromises);
+      propertyData.images = uploadedImages;
+    }
+
+    // Save the property to the database
     const newProperty = new Property(propertyData);
     await newProperty.save();
 
+    // Redirect to the new property page
     return Response.redirect(
       `${process.env.NEXTAUTH_URL}/properties/${newProperty._id}`
     );
-
-    // return new Response(
-    //   JSON.stringify(
-    //     { message: "POST request to add property received" },
-    //     { status: 200 }
-    //   )
-    // );
   } catch (error) {
     console.error(error);
     return new Response(

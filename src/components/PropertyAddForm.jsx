@@ -4,14 +4,14 @@ import { useState, useEffect } from "react";
 
 const PropertyAddForm = () => {
   const [fields, setFields] = useState({
-    name: "Cozy Downtown Loft",
-    type: "Apartment",
+    name: "",
+    type: "",
     description: "",
     location: {
-      street: "45 Main Street",
-      city: "New York",
-      state: "NY",
-      zipcode: "10001",
+      street: "",
+      city: "",
+      state: "",
+      zipcode: "",
     },
     beds: 1,
     baths: 1,
@@ -22,9 +22,9 @@ const PropertyAddForm = () => {
       nightly: 0,
     },
     seller_info: {
-      name: "Jane Smith",
-      email: "jane@gmail.com",
-      phone: "212-555-5555",
+      name: "",
+      email: "",
+      phone: "",
     },
     images: [],
     is_featured: false,
@@ -50,7 +50,6 @@ const PropertyAddForm = () => {
         [name]: value,
       });
     }
-    console.log(value);
   };
   const handleAmenitiesChange = (e) => {
     const { name, value, checked } = e.target;
@@ -516,6 +515,7 @@ const PropertyAddForm = () => {
           name="images"
           className="border rounded w-full py-2 px-3"
           accept="image/*"
+          required={true}
           multiple
           onChange={handleImageChange}
         />

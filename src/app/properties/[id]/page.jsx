@@ -8,6 +8,7 @@ import PropertyDetails from "@/components/PropertyDetails";
 import Link from "next/link";
 import { FaArrowLeft } from "react-icons/fa";
 import Spinner from "@/app/loading";
+import PropertyImages from "@/components/PropertyImages";
 
 const PropertyPage = () => {
   const { id } = useParams();
@@ -152,6 +153,7 @@ const PropertyPage = () => {
               </div>
             </div>
           </section>
+          <PropertyImages images={property.images} />
         </>
       )}
     </>
