@@ -37,7 +37,7 @@ const SearchResultsPage = () => {
       }
     };
     fetchSearchResults();
-  }, [location, propertyType]);
+  }, [location, propertyType, bedrooms, bathrooms]);
 
   if (loading) return <Spinner />;
 

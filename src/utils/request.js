@@ -1,12 +1,12 @@
 const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN || null;
 
 // fetch all Properties
-async function fetchProperties() {
+async function fetchProperties( { showFeatured = false} = {}) {
   try {
     // if domain is not available yet
     if (!apiDomain) return [];
 
-    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/properties${showFeatured? '/featured': ''}`, {
       cache: "no-cache",
     });
     if (!res.ok) {

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { FaSearchPlus } from "react-icons/fa";
+import { FaSearchMinus, FaSearchPlus } from "react-icons/fa";
 
 const PropertySearchForm = () => {
   const [isAdvancedSearchActive, setIsAdvancedSearchActive] = useState(false);
@@ -68,18 +68,19 @@ const PropertySearchForm = () => {
             <option value="Other">Other</option>
           </select>
         </div>
-        <button
-          type="button"
-          className=" flex items-center md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-6 py-3 rounded-lg bg-white text-black hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
-          onClick={() => setIsAdvancedSearchActive(!isAdvancedSearchActive)}
-        >
-          <FaSearchPlus className="ml-2" />
-        </button>
+        
         <button
           type="submit"
           className="md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
         >
           Search
+        </button>
+        <button
+          type="button"
+          className=" flex items-center md:ml-4 mt-4 md:mt-0 w-full md:w-auto p-3 rounded-lg bg-white text-black hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
+          onClick={() => setIsAdvancedSearchActive(!isAdvancedSearchActive)}
+        >
+          {isAdvancedSearchActive ? <FaSearchMinus /> : <FaSearchPlus />} 
         </button>
       </div>
 

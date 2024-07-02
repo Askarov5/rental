@@ -6,9 +6,10 @@ import { setDefaults, fromAddress } from "react-geocode";
 import Spinner from "@/app/loading";
 import Image from "next/image";
 import pin from "@/assets/images/pin.svg";
-import { set } from "mongoose";
 
 const PropertyMap = ({ property }) => {
+  const { street, city, state, zipcode } = property.location;
+  
   const [lat, setLat] = useState(null);
   const [lng, setLng] = useState(null);
   const [viewport, setViewport] = useState({
@@ -31,7 +32,7 @@ const PropertyMap = ({ property }) => {
   useEffect(() => {
     const fetchCoordinates = async () => {
       try {
-        const address = `${property.location.street}, ${property.location.city}, ${property.location.state}, ${property.location.zip}`;
+        const address = `${street}, ${city}, ${state}, ${zipcode}`;
         const response = await fromAddress(address);
 
         if( response.results.length === 0) {
@@ -57,7 +58,7 @@ const PropertyMap = ({ property }) => {
     };
 
     fetchCoordinates();
-  }, []);
+  }, [street, city, state, zipcode]);
 
   if (loading) return <Spinner loading={loading} />;
 

@@ -85,6 +85,9 @@ const ProfilePage = () => {
               <div className="mb-4">
                 <Image
                   className="h-32 w-32 md:h-48 md:w-48 rounded-full mx-auto md:mx-0"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
                   src={profileImage || profileImageDefault}
                   alt="User Profile Picture"
                 />
@@ -109,7 +112,7 @@ const ProfilePage = () => {
               ) : (
                 properties.map((property, index) => (
                   <div
-                    className="mb-6 flex justify-between p-2 shadow items-top"
+                    className="mb-6 flex gap-2 justify-between p-2 shadow items-top"
                     key={index}
                   >
                     <Link

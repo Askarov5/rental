@@ -8,15 +8,11 @@ export const GET = async (req) => {
     const { searchParams } = new URL(req.url);
     const location = searchParams.get("location") || "";
     const propertyType = searchParams.get("propertyType") || "All";
-    const bedrooms = searchParams.get("bedrooms") || 'Any';
-    const bathrooms = searchParams.get("bathrooms") || 'Any';
-
-    console.log(location, propertyType);
+    const bedrooms = searchParams.get("bedrooms") || "Any";
+    const bathrooms = searchParams.get("bathrooms") || "Any";
 
     // get properties based on the search criteria from the database
     await connectDB();
-
-    console.log(location, propertyType, bedrooms, bathrooms);
 
     // Match location, description, street, city, state, or zip against database fields
     const locationPattern = new RegExp(location, "i");
@@ -39,15 +35,17 @@ export const GET = async (req) => {
 
     // Only check for bedrooms if it's not "Any"
     if (bedrooms !== "Any") {
-      query.beds = parseInt(bedrooms);
+      const bedroomsInt = parseInt(bedrooms);
+      if (bedroomsInt < 4) query.beds = bedroomsInt;
+      else query.beds = { $gte: bedroomsInt };
     }
 
     // Only check for bathrooms if it's not "Any"
     if (bathrooms !== "Any") {
-      query.baths = parseInt(bathrooms);
+      const bathroomsInt = parseInt(bathrooms);
+      if (bathroomsInt < 4) query.baths = bathroomsInt;
+      else query.baths = { $gte: bathroomsInt };
     }
-
-    console.log(query)
 
     const properties = await Property.find(query);
 

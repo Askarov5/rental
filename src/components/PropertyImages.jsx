@@ -1,4 +1,7 @@
 import Image from "next/image";
+import "photoswipe/dist/photoswipe.css";
+
+import { Gallery, Item } from "react-photoswipe-gallery";
 
 const PropertyImages = ({ images }) => {
   return (
@@ -9,19 +12,27 @@ const PropertyImages = ({ images }) => {
             <h3 className="text-lg font-bold mb-6">Property Images</h3>
           </div>
           <div className="grid grid-cols-3 gap-2 justify-around items-center">
+            <Gallery>
               {images.map((image, index) => (
-                  <Image
-                  key={index}
-                  src={image}
-                  alt=""
-                  width={0}
-                  height={0}
-                  sizes="100vw"
-                  className="rounded-md shadow-md m-1 w-auto h-auto"
-                  priority={true}
-                />
-                
+                <Item original={image} thumbnail={image} key={index}
+                >
+                  {({ ref, open }) => (
+                    <Image
+                      key={index}
+                      src={image}
+                      ref={ref}
+                      onClick={open}
+                      alt=""
+                      width={0}
+                      height={0}
+                      sizes="100vw"
+                      className="rounded-md shadow-md m-1 w-auto h-auto"
+                      priority={true}
+                    />
+                  )}
+                </Item>
               ))}
+            </Gallery>
           </div>
         </div>
       </div>
