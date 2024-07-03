@@ -68,7 +68,7 @@ const Navbar = () => {
 
               <span className="hidden md:block text-white text-2xl font-bold ml-2">
                 {" "}
-                Zillow{" "}
+                Rental.KG{" "}
               </span>
             </Link>
             {/* <!-- Desktop Menu Hidden below md screens --> */}
@@ -196,7 +196,19 @@ const Navbar = () => {
                       Your Profile
                     </Link>
                     <Link
-                      href="properties/saved"
+                      href="/messages"
+                      className="block px-4 py-2 text-sm text-gray-700"
+                      role="menuitem"
+                      tabIndex="-1"
+                      id="user-menu-item-1"
+                      onClick={() => {
+                        setIsProfileMenuOpen(false);
+                      }}
+                    >
+                      Messages
+                    </Link>
+                    <Link
+                      href="/properties/saved"
                       className="block px-4 py-2 text-sm text-gray-700"
                       role="menuitem"
                       tabIndex="-1"
