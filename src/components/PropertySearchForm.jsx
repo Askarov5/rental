@@ -31,7 +31,7 @@ const PropertySearchForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-3 mx-auto max-w-2xl flex flex-wrap items-center"
+      className="mt-3 mx-auto max-w-2xl flex flex-wrap items-center min-h-[100px]"
     >
       <div className="w-full flex items-center">
         <div className="w-full md:w-3/5 md:pr-2 mb-4 md:mb-0">
@@ -41,7 +41,7 @@ const PropertySearchForm = () => {
           <input
             type="text"
             id="location"
-            placeholder="Enter Keywords or Location (City, State, Zip, etc)"
+            placeholder="Enter Keywords or Location"
             className="w-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
             value={location}
             onChange={(e) => setLocation(e.target.value)}
@@ -84,8 +84,8 @@ const PropertySearchForm = () => {
         </button>
       </div>
 
-      {isAdvancedSearchActive && (
-        <div className="advanced-search flex w-full items-center mt-2">
+      
+        <div className={`advanced-search flex w-full items-center mt-2  ${isAdvancedSearchActive ? 'h-10': 'h-0 overflow-hidden'} transition-all duration-500 ease`}>
           <div className="flex-1 mr-2">
             <label htmlFor="property-type" className="sr-only">
               Bedrooms
@@ -123,7 +123,7 @@ const PropertySearchForm = () => {
             </select>
           </div>
         </div>
-      )}
+      
     </form>
   );
 };

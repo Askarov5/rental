@@ -260,6 +260,18 @@ const PropertyAddForm = () => {
           <div>
             <input
               type="checkbox"
+              id="amenity_closet"
+              name="amenities"
+              value="Walk-in Closet"
+              className="mr-2"
+              checked={fields.amenities.includes("Walk-in Closet")}
+              onChange={handleAmenitiesChange}
+            />
+            <label htmlFor="amenity_closet">Walk-in Closet</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
               id="amenity_washer_dryer"
               name="amenities"
               value="Washer & Dryer"
@@ -414,6 +426,30 @@ const PropertyAddForm = () => {
               onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_coffee_maker">Coffee Maker</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_hardwood_floors"
+              name="amenities"
+              value="Hardwood Floors"
+              className="mr-2"
+              checked={fields.amenities.includes("Hardwood Floors")}
+              onChange={handleAmenitiesChange}
+            />
+            <label htmlFor="amenity_hardwood_floors">Hardwood Floors</label>
+          </div>
+          <div>
+            <input
+              type="checkbox"
+              id="amenity_pet_friendly"
+              name="amenities"
+              value="Pet Friendly"
+              className="mr-2"
+              checked={fields.amenities.includes("Pet Friendly")}
+              onChange={handleAmenitiesChange}
+            />
+            <label htmlFor="amenity_pet_friendly">Pet Friendly</label>
           </div>
         </div>
       </div>

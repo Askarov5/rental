@@ -1,5 +1,11 @@
 import Image from "next/image";
-import { FaMoneyBill, FaMapMarker } from "react-icons/fa";
+import {
+    FaBed,
+    FaBath,
+    FaRulerCombined,
+    FaMoneyBill,
+    FaMapMarker,
+  } from "react-icons/fa";
 import PropertyPlaceHolderImage from "@/assets/images/property-placeholder.jpg";
 import Link from "next/link";
 
@@ -23,49 +29,54 @@ const FeaturedPropertyCard = ({ property }) => {
         sizes="100vw"
         className="object-cover rounded-t-xl md:rounded-tr-none md:rounded-l-xl w-full md:w-2/5"
       />
-      <div className="p-6 w-full">
-        <h3 className="text-xl font-bold">{property.name}</h3>
-        <div className="text-gray-600 mb-4">{property.type}</div>
-        <h3 className="absolute top-[10px] left-[10px] bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right">
-          $ {getRateDisplay()}
-        </h3>
-        <div className="flex justify-center gap-4 text-gray-500 mb-4">
-          <p>
-            <i className="fa-solid fa-bed"></i> {property.beds}{" "}
-            <span className="md:hidden lg:inline">Beds</span>
-          </p>
-          <p>
-            <i className="fa-solid fa-bath"></i> {property.baths}{" "}
-            <span className="md:hidden lg:inline">Baths</span>
-          </p>
-          <p>
-            <i className="fa-solid fa-ruler-combined"></i>
-            {property.square_feet}{" "}
-            <span className="md:hidden lg:inline">sqft</span>
-          </p>
+      <div className="p-5 w-full flex flex-wrap items-stretch">
+        <div className="flex justify-between items-center mb-3 w-full">
+          <div className="flex justify-end text-green-900 text-sm">
+            {property.rates.nightly ? (
+              <p className="flex items-center gap-1 mr-2">
+                <FaMoneyBill /> <span>Nightly</span>
+              </p>
+            ) : (
+              <p></p>
+            )}
+
+            {property.rates.monthly ? (
+              <p className="flex items-center gap-1">
+                <FaMoneyBill /> <span>Monthly</span>
+              </p>
+            ) : (
+              <p></p>
+            )}
+          </div>
+          <div className="text-gray-600 text-end">{property.type}</div>
+        </div>
+        
+        <div className="w-full">
+          <h3 className="text-xl font-bold mb-2">{property.name}</h3>
+
+          <h3 className="absolute top-[10px] left-[10px] bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right">
+            $ {getRateDisplay()}
+          </h3>
+          <div className="flex justify-around gap-3 text-gray-500 mb-4">
+            <p>
+              <FaBed className="inline mr-1"/> {property.beds}{" "}
+              <span className="md:hidden lg:inline">Beds</span>
+            </p>
+            <p>
+              <FaBath className="inline mr-1"/> {property.baths}{" "}
+              <span className="md:hidden lg:inline">Baths</span>
+            </p>
+            <p>
+              <FaRulerCombined className="inline mr-1"/>
+              {property.square_feet}{" "}
+              <span className="md:hidden lg:inline">sqft</span>
+            </p>
+          </div>
+          
+          <div className="border border-gray-200 mb-5"></div>
         </div>
 
-        <div className="flex justify-center gap-4 text-green-900 text-sm mb-4">
-          {property.rates.nightly ? (
-            <p className="flex  items-center gap-1">
-              <FaMoneyBill /> <span>Nightly</span>
-            </p>
-          ) : (
-            <p></p>
-          )}
-
-          {property.rates.monthly ? (
-            <p className="flex items-center gap-1">
-              <FaMoneyBill /> <span>Monthly</span>
-            </p>
-          ) : (
-            <p></p>
-          )}
-        </div>
-
-        <div className="border border-gray-200 mb-5"></div>
-
-        <div className="flex flex-col lg:flex-row justify-between">
+        <div className="flex flex-col lg:flex-row justify-between w-full">
           <div className="flex align-middle gap-2 mb-4 lg:mb-0">
             <FaMapMarker className=" text-lg text-orange-700"></FaMapMarker>
             <span className="text-orange-700">
