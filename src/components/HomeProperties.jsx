@@ -16,10 +16,10 @@ const HomeProperties = async () => {
             Recent Properties
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {recentProperties.length === 0 ? (
+            {recentProperties && recentProperties.length === 0 ? (
               <p>No Recent Properties Found</p>
             ) : (
-              recentProperties.map((p) => (
+              recentProperties && recentProperties.map((p) => (
                 <PropertyCard key={p._id} property={p} />
               ))
             )}
