@@ -8,6 +8,8 @@ export const metadata = {
   description: " Find your perfect property easily",
 };
 
+export const dynamic = "force-dynamic";
+
 const HomePage = async () => {
   return (
     <>
