@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import logoImg from "@/assets/images/logo-white.png";
 import profileDefault from "@/assets/images/profile.png";
-import { FaGoogle } from "react-icons/fa";
+import { FaGoogle, FaHome } from "react-icons/fa";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import UnreadMessageCount from "./UnreadMessageCount";
 
@@ -29,7 +29,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-blue-700 border-b border-blue-500">
+    <nav className="bg-white border-b border-blue-50 ">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
         <div className="relative flex h-20 items-center justify-between">
           <div className="absolute inset-y-0 left-0 flex items-center md:hidden">
@@ -37,7 +37,7 @@ const Navbar = () => {
             <button
               type="button"
               id="mobile-dropdown-button"
-              className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              className="relative inline-flex items-center justify-center rounded-md p-2 text-blue-600 hover:bg-gray-300 hover:text-blue-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
               aria-controls="mobile-menu"
               aria-expanded="false"
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
@@ -63,30 +63,33 @@ const Navbar = () => {
 
           <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
             {/* <!-- Logo --> */}
-            <Link className="flex flex-shrink-0 items-center" href="/">
-              <Image className="h-10 w-auto" src={logoImg} alt="Zillow" />
+            <Link className="flex overflow-hidden rounded flex-shrink-0 items-center group justify-center relative cursor-pointer" href="/">
+              <div className="rounded-full p-2 border-2 border-blue-600">
+                <FaHome className="text-blue-600 text-2xl font-bold" />
+              </div>
+              
 
-              <span className="hidden md:block text-white text-2xl font-bold ml-2">
-                {" "}
+              <span className="hidden md:block text-blue-600 text-2xl font-bold ml-2">
                 Rental.KG{" "}
               </span>
+              <div className="absolute top-0 -inset-full h-full w-1/2 z-5 block transform -skew-x-12 bg-gradient-to-r from-transparent to-white opacity-40 group-hover:animate-shine" />
             </Link>
             {/* <!-- Desktop Menu Hidden below md screens --> */}
             <div className="hidden md:ml-6 md:block">
-              <div className="flex space-x-2">
+              <div className="flex space-x-4 text-blue-600 font-semibold">
                 <Link
                   href="/"
                   className={`${
-                    pathname === "/" ? "bg-black" : ""
-                  } text-white  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                    pathname === "/" ? "after:scale-x-100" : ""
+                  }  rounded-md py-2 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                 >
                   Home
                 </Link>
                 <Link
                   href="/properties"
                   className={`${
-                    pathname === "/properties" ? "bg-black" : ""
-                  } text-white  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                    pathname === "/properties" ? "after:scale-x-100" : ""
+                  } rounded-md py-2 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                 >
                   Properties
                 </Link>
@@ -94,8 +97,8 @@ const Navbar = () => {
                   <Link
                     href="/properties/add"
                     className={`${
-                      pathname === "/properties/add" ? "bg-black" : ""
-                    } text-white  hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`}
+                      pathname === "/properties/add" ? "after:scale-x-100" : ""
+                    } rounded-md py-2 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                   >
                     List a Property
                   </Link>
@@ -129,7 +132,7 @@ const Navbar = () => {
               <Link href="/messages" className="relative group">
                 <button
                   type="button"
-                  className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+                  className="relative rounded-full border border-blue-600 p-1 text-blue-600 hover:text-blue-500 hover:border-blue-500 focus:outline-none focus:ring-2 focus:text-blue-300 focus:ring-offset-2 focus:ring-offset-blue-500"
                 >
                   <span className="absolute -inset-1.5"></span>
                   <span className="sr-only">View notifications</span>
@@ -185,7 +188,9 @@ const Navbar = () => {
                   >
                     <Link
                       href="/profile"
-                      className="block px-4 py-2 text-sm text-gray-700"
+                      className={`${
+                        pathname === "/profile" ? "after:scale-x-100" : ""
+                      } px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-0"
@@ -197,7 +202,9 @@ const Navbar = () => {
                     </Link>
                     <Link
                       href="/messages"
-                      className="block px-4 py-2 text-sm text-gray-700"
+                      className={ `${
+                        pathname === "/messages" ? "after:scale-x-100" : ""
+                      }  px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-1"
@@ -209,7 +216,9 @@ const Navbar = () => {
                     </Link>
                     <Link
                       href="/properties/saved"
-                      className="block px-4 py-2 text-sm text-gray-700"
+                      className={`${
+                        pathname === "/properties/saved" ? "after:scale-x-100" : ""
+                      } px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-2"
@@ -246,16 +255,16 @@ const Navbar = () => {
             <Link
               href="/"
               className={`${
-                pathname === "/" ? "bg-gray-900" : ""
-              } text-white block rounded-md px-3 py-2 text-base font-medium`}
+                pathname === "/" ? "after:scale-x-100" : ""
+              } rounded-md px-3 py-2 text-base font-medium text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
             >
               Home
             </Link>
             <Link
               href="/properties"
               className={`${
-                pathname === "/properties" ? "bg-gray-900" : ""
-              } text-white block rounded-md px-3 py-2 text-base font-medium`}
+                pathname === "/properties" ? "after:scale-x-100": ""
+              } rounded-md px-3 py-2 text-base font-medium text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
             >
               Properties
             </Link>
@@ -263,8 +272,8 @@ const Navbar = () => {
               <Link
                 href="/properties/add"
                 className={`${
-                  pathname === "/properties/add" ? "bg-gray-900" : ""
-                } text-white block rounded-md px-3 py-2 text-base font-medium`}
+                  pathname === "/properties/add" ? "after:scale-x-100" : ""
+                } rounded-md px-3 py-2 text-base font-medium text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
               >
                 Add Property
               </Link>

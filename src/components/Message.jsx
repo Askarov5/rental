@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { useState } from "react";
 import { useGlobalContext } from "@/context/GlobalContext";
 import { set } from "mongoose";
+import { FaEnvelope, FaEnvelopeOpen, FaTrashAlt } from "react-icons/fa";
 
 const Message = ({ message }) => {
   const [isRead, setIsRead] = useState(message.read);
@@ -66,15 +67,15 @@ const Message = ({ message }) => {
   if (isDeleted) return null;
 
   return (
-    <div className="relative bg-white p-4 rounded-md shadow-md border border-gray-200">
+    <div className="relative bg-white p-4 rounded-md shadow-md border border-gray-200 flex justify-between gap-2">
       {!isRead && (
-        <div className="absolute top-2 right-3 bg-yellow-500 text-white py-1 px-3 rounded-md">
-          New
+        <div className="absolute -top-3 -left-4 bg-yellow-500 text-white p-1 py-2 rounded-full text-xs">
+          NEW
         </div>
       )}
 
-      <div>
-        <h2 className="text-xl mb-2">
+      <div className="flex-2 w-[60%]">
+        <h2 className="text-lg mb-2">
           <span className="font-bold">Property Inquiry: </span>
           <Link
             href={`${process.env.NEXT_PUBLIC_DOMAIN}/properties/${message.property._id}`}
@@ -83,12 +84,12 @@ const Message = ({ message }) => {
             {message.property.name}
           </Link>
         </h2>
-        <p className="text-gray-700">{message.body}</p>
+        <p className="text-gray-700 text-sm">{message.body}</p>
       </div>
 
-      <div className="text-sm">
-        <h5 className="text-gray-700 font-semibold mt-2">Sender Information</h5>
-        <ul className="flex flex-wrap gap-3">
+      <div className="text-sm flex-1">
+        <h5 className="text-gray-700 font-semibold mb-2 text-lg">Sender Information</h5>
+        <ul className="flex flex-wrap space-y-2 flex-col text-xs">
           <li>
             <strong>Name: </strong> {message.name}
           </li>
@@ -110,20 +111,22 @@ const Message = ({ message }) => {
           </li>
         </ul>
       </div>
-      <div className="buttons">
+      <div className="buttons flex items-center gap-2 flex-wrap w-[60px]">
         <button
-          className={`mt-4 mr-3 ${
+          className={` ${
             isRead ? "bg-gray-300" : "bg-blue-500 text-white"
-          } py-1 px-3 rounded-md`}
+          } py-2 px-3 rounded-md`}
           onClick={handleReadToggle}
+          title={isRead ? "Mark As Unread" : "Mark As Read"}
         >
-          {isRead ? "Mark As Unread" : "Mark As Read"}
+          {isRead ? <FaEnvelope /> : <FaEnvelopeOpen />}
         </button>
         <button
-          className="mt-4 bg-red-500 text-white py-1 px-3 rounded-md"
+          className="bg-red-500 text-white py-2 px-3 rounded-md"
           onClick={handleDeleteClick}
+          title="Delete Message"
         >
-          Delete
+          <FaTrashAlt />
         </button>
       </div>
     </div>

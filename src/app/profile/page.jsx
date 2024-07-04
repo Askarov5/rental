@@ -136,12 +136,17 @@ const ProfilePage = () => {
                     </div>
 
                     <div className="w-full">
-                      <p className="text-lg font-semibold">{property.name}</p>
+                      <Link
+                        href={`/properties/${property._id}`}
+                        className="relative"
+                      >
+                        <p className="text-lg font-semibold">{property.name}</p>
+                      </Link>
                       <address className="text-gray-600">
                         {`${property.location.street}, ${property.location.city}, ${property.location.state}`}
                       </address>
                     </div>
-                    <div className="w-full flex justify-end items-center gap-2">
+                    <div className="flex-1 flex justify-end items-center gap-2">
                       <Link
                         href={`/properties/${property._id}/edit`}
                         className="bg-blue-500 text-white p-2 px-3 rounded-md hover:bg-blue-600 inline-block"

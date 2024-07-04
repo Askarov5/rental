@@ -1,3 +1,11 @@
+import {
+  FaBookmark,
+  FaCalendarAlt,
+  FaEnvelope,
+  FaListAlt,
+  FaPhone,
+  FaSearch,
+} from "react-icons/fa";
 import InfoBox from "./InfoBox";
 const InfoBoxes = () => {
   return (
@@ -12,8 +20,22 @@ const InfoBoxes = () => {
               text: "Browse Properties",
             }}
           >
-            Find your dream rental property. Bookmark properties and contact
-            owners.
+            <ul className="flex flex-row py-4 space-x-2">
+              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center ">
+                <span>
+                  <FaSearch className="text-2xl" />
+                </span>
+                <span>Search properties and filter by many parameters</span>{" "}
+              </li>
+              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
+                <FaBookmark className="text-2xl" /> Bookmark or share properties
+                you like
+              </li>
+              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
+                <FaEnvelope className="text-2xl" /> Contact owner or share with
+                friends
+              </li>
+            </ul>
           </InfoBox>
 
           <InfoBox
@@ -25,8 +47,22 @@ const InfoBoxes = () => {
               text: "Add Property",
             }}
           >
-            List your properties and reach potential tenants. Rent as an airbnb
-            or long term.
+            <ul className="flex flex-row py-4 space-x-2">
+              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center ">
+                <span>
+                  <FaListAlt className="text-2xl text-blue-600" />
+                </span>
+                <span>List your properties and reach potential tenants</span>
+              </li>
+              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
+                <FaCalendarAlt className="text-2xl  text-blue-600" /> Rent as an airbnb or long
+                term.
+              </li>
+              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
+                <FaPhone className="text-2xl  text-blue-600" /> Potential tenants will leave
+                their contact info
+              </li>
+            </ul>
           </InfoBox>
         </div>
       </div>

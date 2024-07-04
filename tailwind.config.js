@@ -17,7 +17,15 @@ module.exports = {
       },
       gridTemplateColumns: {
         '70/30': '70% 28%'
-      }
+      },
+      animation: {
+        shine: "shine 1s",
+      },
+      keyframes: {
+        shine: {
+          "100%": { left: "125%" },
+        },
+      },
     },
   },
   plugins: [],

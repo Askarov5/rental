@@ -31,10 +31,10 @@ const PropertySearchForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-3 mx-auto max-w-2xl flex flex-wrap items-center min-h-[100px]"
+      className="w-full mt-3 mx-auto max-w-2xl flex flex-col items-center min-h-[100px]"
     >
-      <div className="w-full flex items-center">
-        <div className="w-full md:w-3/5 md:pr-2 mb-4 md:mb-0">
+      <div className="w-full flex items-center justify-between gap-2">
+        <div className="w-full">
           <label htmlFor="location" className="sr-only">
             Location
           </label>
@@ -47,7 +47,7 @@ const PropertySearchForm = () => {
             onChange={(e) => setLocation(e.target.value)}
           />
         </div>
-        <div className="w-full md:w-2/5 md:pl-2">
+        <div className="w-full">
           <label htmlFor="property-type" className="sr-only">
             Property Type
           </label>
@@ -68,62 +68,65 @@ const PropertySearchForm = () => {
             <option value="Other">Other</option>
           </select>
         </div>
-        
-        <button
-          type="submit"
-          className="md:ml-4 mt-4 md:mt-0 w-full md:w-auto px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
-        >
-          Search
-        </button>
-        <button
-          type="button"
-          className=" flex items-center md:ml-4 mt-4 md:mt-0 w-full md:w-auto p-3 rounded-lg bg-white text-black hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
-          onClick={() => setIsAdvancedSearchActive(!isAdvancedSearchActive)}
-        >
-          {isAdvancedSearchActive ? <FaSearchMinus /> : <FaSearchPlus />} 
-        </button>
+        <div className="flex justify-between items-center gap-2">
+          <button
+            type="submit"
+            className="px-6 py-3 rounded-lg bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
+          >
+            Search
+          </button>
+          <button
+            type="button"
+            className=" flex items-center p-3 py-4 rounded-lg bg-white text-black hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
+            onClick={() => setIsAdvancedSearchActive(!isAdvancedSearchActive)}
+          >
+            {isAdvancedSearchActive ? <FaSearchMinus /> : <FaSearchPlus />}
+          </button>
+        </div>
       </div>
 
-      
-        <div className={`advanced-search flex w-full items-center mt-2  ${isAdvancedSearchActive ? 'h-10': 'h-0 overflow-hidden'} transition-all duration-500 ease`}>
-          <div className="flex-1 mr-2">
-            <label htmlFor="property-type" className="sr-only">
-              Bedrooms
-            </label>
-            <select
-              id="property-type"
-              className="w-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
-              value={bedrooms}
-              onChange={(e) => setBedrooms(e.target.value)}
-            >
-              <option value="Any">Bedrooms</option>
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4+</option>
-            </select>
-          </div>
-          <div className="flex-1 ml-2">
-            <label htmlFor="property-type" className="sr-only">
-              Bathrooms
-            </label>
-            <select
-              id="property-type"
-              className="w-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
-              value={bathrooms}
-              onChange={(e) => setBathrooms(e.target.value)}
-            >
-              <option value="Any">Bathrooms</option>
-              <option value="0">0</option>
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4+</option>
-            </select>
-          </div>
+      <div
+        className={`advanced-search flex w-full items-center mt-2 gap-2  ${
+          isAdvancedSearchActive ? "h-10" : "h-0 overflow-hidden"
+        } transition-all duration-500 ease`}
+      >
+        <div className="flex-1">
+          <label htmlFor="property-type" className="sr-only">
+            Bedrooms
+          </label>
+          <select
+            id="property-type"
+            className="w-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
+            value={bedrooms}
+            onChange={(e) => setBedrooms(e.target.value)}
+          >
+            <option value="Any">Bedrooms</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4+</option>
+          </select>
         </div>
-      
+        <div className="flex-1">
+          <label htmlFor="property-type" className="sr-only">
+            Bathrooms
+          </label>
+          <select
+            id="property-type"
+            className="w-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
+            value={bathrooms}
+            onChange={(e) => setBathrooms(e.target.value)}
+          >
+            <option value="Any">Bathrooms</option>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4+</option>
+          </select>
+        </div>
+      </div>
     </form>
   );
 };

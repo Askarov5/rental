@@ -5,7 +5,11 @@ import {
   FaBath,
   FaRulerCombined,
   FaMoneyBill,
-  FaMapMarker,
+  FaSquare,
+  FaHome,
+  FaColumns,
+  FaBuilding,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
 
 import PropertyPlaceHolderImage from "@/assets/images/property-placeholder.jpg";
@@ -16,14 +20,68 @@ const PropertyCard = ({ property }) => {
   const { rates } = property;
   const getRateDisplay = () => {
     if (rates.monthly) {
-      return `${rates.monthly.toLocaleString()}/mo`;
+      return (
+        <span>
+          {rates.monthly.toLocaleString()}
+          <small>/MO</small>
+        </span>
+      );
     } else if (rates.nightly) {
-      return `${rates.nightly.toLocaleString()}/night`;
+      return (
+        <span>
+          {rates.nightly.toLocaleString()}
+          <small>/NIGHT</small>
+        </span>
+      );
+    }
+  };
+
+  const getTypeDisplay = (type) => {
+    switch (type) {
+      case "Studio":
+        return (
+          <>
+            <FaSquare className="inline mr-1 text-blue-600" /> Studio
+          </>
+        );
+      case "Room":
+        return (
+          <>
+            <FaColumns className="inline mr-1 text-blue-600" /> Room
+          </>
+        );
+      case "Apartment":
+        return (
+          <>
+            <FaBuilding className="inline mr-1 text-blue-600" /> Apartment
+          </>
+        );
+      case "Condo":
+        return (
+          <>
+            <FaBuilding className="inline mr-1 text-blue-600" /> Condo
+          </>
+        );
+      case "Home":
+        return (
+          <>
+            <FaBuilding className="inline mr-1 text-blue-600" /> Home
+          </>
+        );
+      default:
+        return (
+          <>
+            <FaHome className="inline mr-1 text-blue-600" /> {type}
+          </>
+        );
     }
   };
 
   return (
-    <div className="rounded-xl shadow-md relative">
+    <Link
+      href={`/properties/${property._id}`}
+      className="rounded-xl shadow-md hover:shadow-xl transition-shadow relative"
+    >
       <Image
         src={property.images[0] || PropertyPlaceHolderImage}
         alt=""
@@ -33,28 +91,34 @@ const PropertyCard = ({ property }) => {
         className="w-full h-auto rounded-t-xl"
       />
       <div className="p-4">
-        <h3 className="absolute top-[10px] right-[10px] bg-white px-4 py-2 rounded-lg text-blue-500 font-bold text-right md:text-center lg:text-right">
-          ${getRateDisplay()}
-        </h3>
         <div className="w-full flex justify-between items-center mb-4">
-          <div className="flex justify-start gap-5 text-green-900 text-sm">
+          <div className="flex justify-start gap-1 items-center text-green-700 text-sm">
+            <FaMoneyBill className="inline mr-1" />
             {rates.nightly > 0 ? (
-              <p title={`$ ${property.rates.nightly}`} className="cursor-help">
-                <FaMoneyBill className="inline mr-1" /> Nightly
-              </p>
+              <span
+                title={`$ ${property.rates.nightly}`}
+                className="cursor-help"
+              >
+                Nightly
+              </span>
             ) : (
               <></>
             )}
-
+            {rates.nightly > 0 && rates.monthly > 0 ? " | " : ""}
             {rates.monthly > 0 ? (
-              <p title={`$ ${property.rates.monthly}`} className="cursor-help">
-                <FaMoneyBill className="inline mr-1" /> Monthly
-              </p>
+              <span
+                title={`$ ${property.rates.monthly}`}
+                className="cursor-help"
+              >
+                Monthly
+              </span>
             ) : (
               <></>
             )}
           </div>
-          <div className="text-gray-600">{property.type}</div>
+          <div className="text-gray-600 text-sm p-1 rounded-md bg-blue-50 flex items-center">
+            {getTypeDisplay(property.type)}
+          </div>
         </div>
         <div className="text-left md:text-center lg:text-left mb-4">
           <h3 className="text-xl font-bold mb-1">{property.name}</h3>
@@ -63,17 +127,19 @@ const PropertyCard = ({ property }) => {
 
         <div className="flex justify-around gap-4 text-gray-500 mb-4">
           <p>
-            <FaBed className="inline mr-1" /> {property.beds}{" "}
+            <FaBed className="inline mr-1 text-blue-600" /> {property.beds}{" "}
             <span className="md:hidden lg:inline">Beds</span>
           </p>
           <p>
-            <FaBath className="inline mr-1" /> {property.baths}{" "}
+            <FaBath className="inline mr-1 text-blue-600" /> {property.baths}{" "}
             <span className="md:hidden lg:inline">Baths</span>
           </p>
           <p>
-            <FaRulerCombined className="inline mr-1" />
+            <FaRulerCombined className="inline mr-1 text-blue-600" />
             {property.square_feet}{" "}
-            <span className="md:hidden lg:inline">sqft</span>
+            <span className="md:hidden lg:inline">
+              ft<sup>2</sup>
+            </span>
           </p>
         </div>
 
@@ -81,21 +147,18 @@ const PropertyCard = ({ property }) => {
 
         <div className="flex flex-col lg:flex-row justify-between items-center">
           <div className="flex align-middle gap-2 mb-4 lg:mb-0">
-            <FaMapMarker className=" text-orange-700 mt-1" />
+            <FaMapMarkerAlt className=" text-orange-700 mt-1" />
             <span className="text-orange-700">
               {" "}
-              {property.location.city} {property.location.state}
+              {property.location.city}, {property.location.state}
             </span>
           </div>
-          <Link
-            href={`/properties/${property._id}`}
-            className="h-[36px] bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-lg text-center text-sm"
-          >
-            Details
-          </Link>
+          <h3 className=" px-4 py-2 rounded-lg text-blue-500 text-2xl font-bold text-right md:text-center lg:text-right">
+            ${getRateDisplay()}
+          </h3>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
