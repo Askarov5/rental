@@ -1,6 +1,8 @@
 const { default: connectDB } = require("@/config/database");
 const { default: Property } = require("@/models/Properties");
 
+export const dynamic = "force-dynamic";
+
 // GET /api/properties/search-results
 export const GET = async (req) => {
   try {
