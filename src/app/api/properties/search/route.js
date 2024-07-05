@@ -12,9 +12,12 @@ export const GET = async (req) => {
     const propertyType = searchParams.get("propertyType") || "All";
     const bedrooms = searchParams.get("bedrooms") || "Any";
     const bathrooms = searchParams.get("bathrooms") || "Any";
+    const rateMax = searchParams.get("rateMax") || '9999999';
+    const rateType = searchParams.get("rateType") || "Any";
 
     // get properties based on the search criteria from the database
     await connectDB();
+
 
     // Match location, description, street, city, state, or zip against database fields
     const locationPattern = new RegExp(location, "i");
@@ -47,6 +50,23 @@ export const GET = async (req) => {
       const bathroomsInt = parseInt(bathrooms);
       if (bathroomsInt < 4) query.baths = bathroomsInt;
       else query.baths = { $gte: bathroomsInt };
+    }
+    
+    // Check rate max and rate type
+    if (rateMax !== "Any" && rateType !== "Any") {
+      if(rateType === "Nightly") {
+        query['$and'] = [ {"rates.nightly": { $lte: parseInt(rateMax) }} ,{ "rates.nightly": { $gt: 0 }} ];
+      } else if(rateType === "Monthly") {
+        query['$and'] =  [ {"rates.monthly": { $lte: parseInt(rateMax) }} ,{ "rates.monthly": { $gt: 0 }} ];
+      }
+    } else if( rateMax !== "Any" && rateType === "Any") {
+      query['$or'] = [ {"rates.nightly": { $lte: parseInt(rateMax) }} , {"rates.monthly": { $lte: parseInt(rateMax) }} ];
+    } else if( rateMax === "Any" && rateType !== "Any") {
+      if(rateType === "Nightly") {
+        query['rates.nightly'] = { $gt: 0 };
+      } else if(rateType === "Monthly") {
+        query['rates.monthly'] = { $gt: 0 };
+      }
     }
 
     const properties = await Property.find(query);

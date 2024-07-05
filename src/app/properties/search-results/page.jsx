@@ -17,12 +17,14 @@ const SearchResultsPage = () => {
   const propertyType = searchParams.get("propertyType") || "";
   const bedrooms = searchParams.get("bedrooms");
   const bathrooms = searchParams.get("bathrooms");
+  const rateMax = searchParams.get("rateMax");
+  const rateType = searchParams.get("rateType");
 
   useEffect(() => {
     const fetchSearchResults = async () => {
       try {
         const res = await fetch(
-          `/api/properties/search?location=${location}&propertyType=${propertyType}&bedrooms=${bedrooms}&bathrooms=${bathrooms}`
+          `/api/properties/search?location=${location}&propertyType=${propertyType}&bedrooms=${bedrooms}&bathrooms=${bathrooms}&rateMax=${rateMax}&rateType=${rateType}`
         );
         if (res.status === 200) {
           const data = await res.json();
@@ -37,7 +39,7 @@ const SearchResultsPage = () => {
       }
     };
     fetchSearchResults();
-  }, [location, propertyType, bedrooms, bathrooms]);
+  }, [location, propertyType, bedrooms, bathrooms, rateMax, rateType]);
 
   if (loading) return <Spinner />;
 
