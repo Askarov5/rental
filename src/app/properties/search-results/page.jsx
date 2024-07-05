@@ -14,11 +14,11 @@ const SearchResultsPage = () => {
   const [loading, setLoading] = useState(true);
 
   const location = searchParams.get("location") || "";
-  const propertyType = searchParams.get("propertyType") || "";
-  const bedrooms = searchParams.get("bedrooms");
-  const bathrooms = searchParams.get("bathrooms");
-  const rateMax = searchParams.get("rateMax");
-  const rateType = searchParams.get("rateType");
+  const propertyType = searchParams.get("propertyType") || "Any";
+  const bedrooms = searchParams.get("bedrooms") || "Any";
+  const bathrooms = searchParams.get("bathrooms") || "Any";
+  const rateMax = searchParams.get("rateMax") || "10000";
+  const rateType = searchParams.get("rateType") || "Any";
 
   useEffect(() => {
     const fetchSearchResults = async () => {

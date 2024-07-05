@@ -2,23 +2,28 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaSearchMinus, FaSearchPlus } from "react-icons/fa";
+import { set } from "mongoose";
 
 const PropertySearchForm = () => {
   const [isAdvancedSearchActive, setIsAdvancedSearchActive] = useState(false);
 
-  const [location, setLocation] = useState("");
-  const [propertyType, setPropertyType] = useState("All");
-  const [bedrooms, setBedrooms] = useState("Any");
-  const [bathrooms, setBathrooms] = useState("Any");
-  const [rateMax, setRateMax] = useState('Any');
-  const [rateType, setRateType] = useState("Any");
+  const [searchCriteria, setSearchCriteria] = useState({
+    location: "",
+    propertyType: "Any",
+    bedrooms: "Any",
+    bathrooms: "Any",
+    rateMax: "Any",
+    rateType: "Any",
+  });
+
+  const { location, propertyType, bedrooms, bathrooms, rateMax, rateType } = searchCriteria;
 
   const router = useRouter();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (location === "" && propertyType === "All" && bedrooms === "Any" && bathrooms === "Any" && rateMax === "Any" && rateType === "Any") {
+    if (location === "" && propertyType === "Any" && bedrooms === "Any" && bathrooms === "Any" && rateMax === "Any" && rateType === "Any") {
       router.push("/properties");
     } else {
       let query = `?location=${location}&propertyType=${propertyType}&bedrooms=${bedrooms}&bathrooms=${bathrooms}&rateMax=${rateMax}&rateType=${rateType}`;
@@ -47,7 +52,7 @@ const PropertySearchForm = () => {
               placeholder="Enter Keywords or Location"
               className="w-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
               value={location}
-              onChange={(e) => setLocation(e.target.value)}
+              onChange={(e) => setSearchCriteria({...searchCriteria, location: e.target.value})}
             />
           </div>
           <div className="w-full flex gap-2">
@@ -59,9 +64,9 @@ const PropertySearchForm = () => {
               className="w-full h-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
               style={{ WebkitAppearance: "menulist-button" }}
               value={propertyType}
-              onChange={(e) => setPropertyType(e.target.value)}
+              onChange={(e) => setSearchCriteria({ ...searchCriteria, propertyType: e.target.value })}
             >
-              <option value="All">All</option>
+              <option value="Any">Property Type</option>
               <option value="Apartment">Apartment</option>
               <option value="Studio">Studio</option>
               <option value="Condo">Condo</option>
@@ -99,7 +104,7 @@ const PropertySearchForm = () => {
             className="w-full h-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
             style={{ WebkitAppearance: "menulist-button" }}
             value={bedrooms}
-            onChange={(e) => setBedrooms(e.target.value)}
+            onChange={(e) => setSearchCriteria({...searchCriteria, bedrooms: e.target.value})}
           >
             <option value="Any">Bedrooms</option>
             <option value="0">0</option>
@@ -118,7 +123,7 @@ const PropertySearchForm = () => {
             className="w-full h-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
             style={{ WebkitAppearance: "menulist-button" }}
             value={bathrooms}
-            onChange={(e) => setBathrooms(e.target.value)}
+            onChange={(e) => setSearchCriteria({...searchCriteria, bathrooms: e.target.value})}
           >
             <option value="Any">Bathrooms</option>
             <option value="0">0</option>
@@ -136,7 +141,7 @@ const PropertySearchForm = () => {
             className="w-full h-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
             style={{ WebkitAppearance: "menulist-button" }}
             value={rateMax}
-            onChange={(e) => setRateMax(e.target.value)}
+            onChange={(e) => setSearchCriteria({...searchCriteria, rateMax: e.target.value})}
           >
             <option value="Any">Max Rate</option>
             <option value="100">100</option>
@@ -182,7 +187,7 @@ const PropertySearchForm = () => {
             className="w-full h-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
             style={{ WebkitAppearance: "menulist-button" }}
             value={rateType}
-            onChange={(e) => setRateType(e.target.value)}
+            onChange={(e) => setSearchCriteria({...searchCriteria, rateType: e.target.value})}
           >
             <option value="Any">Nightly/Monthly</option>
             <option value="Nightly">Nightly</option>
