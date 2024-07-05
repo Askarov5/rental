@@ -1,5 +1,4 @@
 import Properties from "@/components/Properties";
-import PropertyCard from "@/components/PropertyCard";
 import PropertySearchForm from "@/components/PropertySearchForm";
 
 const PropertiesPage = async () => {

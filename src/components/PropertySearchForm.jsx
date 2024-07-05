@@ -3,18 +3,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaSearchMinus, FaSearchPlus } from "react-icons/fa";
 import { set } from "mongoose";
+import { useGlobalContext } from "@/context/GlobalContext";
 
 const PropertySearchForm = () => {
   const [isAdvancedSearchActive, setIsAdvancedSearchActive] = useState(false);
 
-  const [searchCriteria, setSearchCriteria] = useState({
-    location: "",
-    propertyType: "Any",
-    bedrooms: "Any",
-    bathrooms: "Any",
-    rateMax: "Any",
-    rateType: "Any",
-  });
+  const {searchCriteria, setSearchCriteria} = useGlobalContext();
 
   const { location, propertyType, bedrooms, bathrooms, rateMax, rateType } = searchCriteria;
 

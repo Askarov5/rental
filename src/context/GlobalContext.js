@@ -8,9 +8,17 @@ const GlobalContext = createContext();
 // Create a provider for components to consume and subscribe to changes
 export const GlobalProvider = ({ children }) => {
   const [unreadCount, setUnreadCount] = useState(0);
+  const [searchCriteria, setSearchCriteria] = useState({
+    location: "",
+    propertyType: "Any",
+    bedrooms: "Any",
+    bathrooms: "Any",
+    rateMax: "Any",
+    rateType: "Any",
+  });
 
   return (
-    <GlobalContext.Provider value={{ unreadCount, setUnreadCount }}>
+    <GlobalContext.Provider value={{ unreadCount, setUnreadCount, searchCriteria, setSearchCriteria }}>
       {children}
     </GlobalContext.Provider>
   );
