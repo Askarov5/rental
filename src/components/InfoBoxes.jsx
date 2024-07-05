@@ -20,20 +20,24 @@ const InfoBoxes = () => {
               text: "Browse Properties",
             }}
           >
-            <ul className="flex flex-row py-4 space-x-2">
-              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center ">
+            <ul className="flex flex-row items-start py-4 space-x-2">
+              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
                 <span>
                   <FaSearch className="text-2xl" />
                 </span>
                 <span>Search properties and filter by many parameters</span>{" "}
               </li>
               <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
-                <FaBookmark className="text-2xl" /> Bookmark or share properties
-                you like
+                <span>
+                  <FaBookmark className="text-2xl" />
+                </span>
+                <span>Bookmark or share properties you like</span>
               </li>
               <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
-                <FaEnvelope className="text-2xl" /> Contact owner or share with
-                friends
+                <span>
+                  <FaEnvelope className="text-2xl" />
+                </span>
+                <span>Contact owner or share with friends</span>
               </li>
             </ul>
           </InfoBox>
@@ -47,7 +51,7 @@ const InfoBoxes = () => {
               text: "Add Property",
             }}
           >
-            <ul className="flex flex-row py-4 space-x-2">
+            <ul className="flex flex-row items-start py-4 space-x-2">
               <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center ">
                 <span>
                   <FaListAlt className="text-2xl text-blue-600" />
@@ -55,12 +59,14 @@ const InfoBoxes = () => {
                 <span>List your properties and reach potential tenants</span>
               </li>
               <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
-                <FaCalendarAlt className="text-2xl  text-blue-600" /> Rent as an airbnb or long
-                term.
+                <span>
+                  <FaCalendarAlt className="text-2xl  text-blue-600" />
+                </span>
+                <span>Rent as an airbnb or long term.</span>
               </li>
               <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
-                <FaPhone className="text-2xl  text-blue-600" /> Potential tenants will leave
-                their contact info
+                <span><FaPhone className="text-2xl  text-blue-600" /></span>
+                <span>Potential tenants will leave their contact info</span>
               </li>
             </ul>
           </InfoBox>

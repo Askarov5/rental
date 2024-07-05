@@ -4,8 +4,8 @@ import HomeProperties from "@/components/HomeProperties";
 import FeaturedProperties from "@/components/FeaturedProperties";
 
 export const metadata = {
-  title: "Zillow.KG | Properties for sales and rent",
-  description: " Find your perfect property easily",
+  title: "Rental.KG | Properties for rent in Kyrgyzstan",
+  description: " Find your perfect property to rent in Kyrgyzstan",
 };
 
 export const dynamic = "force-dynamic";

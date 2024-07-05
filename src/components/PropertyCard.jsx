@@ -145,8 +145,8 @@ const PropertyCard = ({ property }) => {
 
         <div className="border border-gray-100 mb-5"></div>
 
-        <div className="flex flex-col lg:flex-row justify-between items-center">
-          <div className="flex align-middle gap-2 mb-4 lg:mb-0">
+        <div className="flex justify-between items-center">
+          <div className="flex align-middle gap-2 lg:mb-0">
             <FaMapMarkerAlt className=" text-orange-700 mt-1" />
             <span className="text-orange-700">
               {" "}
