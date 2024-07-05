@@ -18,7 +18,7 @@ const PropertySearchForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (location === "" && propertyType === "All") {
+    if (location === "" && propertyType === "All" && bedrooms === "Any" && bathrooms === "Any" && rateMax === "Any" && rateType === "Any") {
       router.push("/properties");
     } else {
       let query = `?location=${location}&propertyType=${propertyType}&bedrooms=${bedrooms}&bathrooms=${bathrooms}&rateMax=${rateMax}&rateType=${rateType}`;
