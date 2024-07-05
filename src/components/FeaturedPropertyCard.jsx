@@ -134,7 +134,7 @@ const FeaturedPropertyCard = ({ property }) => {
           <div className="border border-gray-200 mb-5"></div>
         </div>
 
-        <div className="flex flex-col lg:flex-row justify-between items-center w-full">
+        <div className="flex flex-row justify-between items-center w-full">
           <div className="flex align-middle gap-2 mb-4 lg:mb-0">
             <FaMapMarkerAlt className=" text-lg text-orange-700"></FaMapMarkerAlt>
             <span className="text-orange-700">

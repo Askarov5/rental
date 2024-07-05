@@ -55,6 +55,7 @@ const PropertySearchForm = () => {
             <select
               id="property-type"
               className="w-full h-full px-4 py-3 rounded-lg bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
+              style="-webkit-appearance: menulist-button;"
               value={propertyType}
               onChange={(e) => setPropertyType(e.target.value)}
             >
