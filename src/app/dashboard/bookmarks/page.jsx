@@ -33,10 +33,13 @@ const SavedPropertiesPage = () => {
   return loading ? (
     <Spinner />
   ) : (
-    <section className="px-4 py-6">
-      
-      <div className="container-xl lg:container m-auto px-4 py-6">
-        <h1 className="text-3xl font-semibold mb-4"> Saved Properties </h1>
+    <section className="">
+      <div className="">
+        <div className="border-b border-gray-200 pb-5  mb-5">
+          <h3 className="text-base font-semibold leading-6 text-gray-900">
+            My Listings
+          </h3>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {properties.length === 0 ? (
             <h3>No Saved Properties Found</h3>

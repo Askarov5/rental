@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
-import logoImg from "@/assets/images/logo-white.png";
 import profileDefault from "@/assets/images/profile.png";
 import { FaGoogle, FaHome } from "react-icons/fa";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
@@ -95,9 +94,9 @@ const Navbar = () => {
                 </Link>
                 {session && (
                   <Link
-                    href="/properties/add"
+                    href="/dashboard/add-property"
                     className={`${
-                      pathname === "/properties/add" ? "after:scale-x-100" : ""
+                      pathname === "/dashboard/add-property" ? "after:scale-x-100" : ""
                     } rounded-md py-2 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                   >
                     List a Property
@@ -129,7 +128,7 @@ const Navbar = () => {
           {/* <!-- Right Side Menu (Logged In) --> */}
           {session && (
             <div className="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
-              <Link href="/messages" className="relative group">
+              <Link href="/dashboard/messages" className="relative group">
                 <button
                   type="button"
                   className="relative rounded-full border border-blue-600 p-1 text-blue-600 hover:text-blue-500 hover:border-blue-500 focus:outline-none focus:ring-2 focus:text-blue-300 focus:ring-offset-2 focus:ring-offset-blue-500"
@@ -187,9 +186,9 @@ const Navbar = () => {
                     tabIndex="-1"
                   >
                     <Link
-                      href="/profile"
+                      href="/dashboard"
                       className={`${
-                        pathname === "/profile" ? "after:scale-x-100" : ""
+                        pathname === "/dashboard" ? "after:scale-x-100" : ""
                       } px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                       role="menuitem"
                       tabIndex="-1"
@@ -201,9 +200,9 @@ const Navbar = () => {
                       Your Profile
                     </Link>
                     <Link
-                      href="/messages"
+                      href="/dashboard/messages"
                       className={ `${
-                        pathname === "/messages" ? "after:scale-x-100" : ""
+                        pathname === "/dashboard/messages" ? "after:scale-x-100" : ""
                       }  px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                       role="menuitem"
                       tabIndex="-1"
@@ -215,9 +214,23 @@ const Navbar = () => {
                       Messages
                     </Link>
                     <Link
-                      href="/properties/saved"
+                      href="/dashboard/properties"
                       className={`${
-                        pathname === "/properties/saved" ? "after:scale-x-100" : ""
+                        pathname === "/dashboard/properties" ? "after:scale-x-100" : ""
+                      } px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+                      role="menuitem"
+                      tabIndex="-1"
+                      id="user-menu-item-2"
+                      onClick={() => {
+                        setIsProfileMenuOpen(false);
+                      }}
+                    >
+                      My Listings
+                    </Link>
+                    <Link
+                      href="/dashboard/bookmarks"
+                      className={`${
+                        pathname === "/dashboard/bookmarks" ? "after:scale-x-100" : ""
                       } px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                       role="menuitem"
                       tabIndex="-1"

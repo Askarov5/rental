@@ -4,8 +4,8 @@ import Link from "next/link";
 import { toast } from "react-toastify";
 import { useState } from "react";
 import { useGlobalContext } from "@/context/GlobalContext";
-import { set } from "mongoose";
 import { FaEnvelope, FaEnvelopeOpen, FaTrashAlt } from "react-icons/fa";
+import ago from "@/utils/ago";
 
 const Message = ({ message }) => {
   const [isRead, setIsRead] = useState(message.read);
@@ -107,7 +107,7 @@ const Message = ({ message }) => {
           </li>
           <li>
             <strong>Received: </strong>{" "}
-            {new Date(message.createdAt).toLocaleString("en-US")}
+            {ago(new Date(message.createdAt).getTime())} ago
           </li>
         </ul>
       </div>
