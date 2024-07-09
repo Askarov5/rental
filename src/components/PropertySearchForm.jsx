@@ -58,7 +58,7 @@ const PropertySearchForm = () => {
             <select
               id="property-type"
               className="w-full h-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
-              style={{ WebkitAppearance: "menulist-button" }}
+              style={{ WebkitAppearance: "menulist-button", appearance: "menulist" }}
               value={propertyType}
               onChange={(e) => setSearchCriteria({ ...searchCriteria, propertyType: e.target.value })}
             >
@@ -98,7 +98,7 @@ const PropertySearchForm = () => {
           <select
             id="property-bedrooms"
             className="w-full h-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
-            style={{ WebkitAppearance: "menulist-button" }}
+            style={{ WebkitAppearance: "menulist-button", appearance: "menulist" }}
             value={bedrooms}
             onChange={(e) => setSearchCriteria({...searchCriteria, bedrooms: e.target.value})}
           >
@@ -117,7 +117,7 @@ const PropertySearchForm = () => {
           <select
             id="property-bathrooms"
             className="w-full h-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
-            style={{ WebkitAppearance: "menulist-button" }}
+            style={{ WebkitAppearance: "menulist-button", appearance: "menulist"}}
             value={bathrooms}
             onChange={(e) => setSearchCriteria({...searchCriteria, bathrooms: e.target.value})}
           >
@@ -135,7 +135,7 @@ const PropertySearchForm = () => {
             name=""
             id="property-rate-max"
             className="w-full h-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
-            style={{ WebkitAppearance: "menulist-button" }}
+            style={{ WebkitAppearance: "menulist-button", appearance: "menulist" }}
             value={rateMax}
             onChange={(e) => setSearchCriteria({...searchCriteria, rateMax: e.target.value})}
           >
@@ -181,7 +181,7 @@ const PropertySearchForm = () => {
             name=""
             id="property-rate-type"
             className="w-full h-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
-            style={{ WebkitAppearance: "menulist-button" }}
+            style={{ WebkitAppearance: "menulist-button", appearance: "menulist" }}
             value={rateType}
             onChange={(e) => setSearchCriteria({...searchCriteria, rateType: e.target.value})}
           >

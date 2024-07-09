@@ -60,7 +60,7 @@ const Navbar = () => {
             </button>
           </div>
 
-          <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
+          <div className="flex flex-1 items-center justify-center md:items-center md:justify-start">
             {/* <!-- Logo --> */}
             <Link className="flex overflow-hidden rounded flex-shrink-0 items-center group justify-center relative cursor-pointer" href="/">
               <div className="rounded-full p-2 border-2 border-blue-600">
@@ -80,7 +80,7 @@ const Navbar = () => {
                   href="/"
                   className={`${
                     pathname === "/" ? "after:scale-x-100" : ""
-                  }  rounded-md py-2 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+                  }  rounded-md py-1 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                 >
                   HOME
                 </Link>
@@ -88,7 +88,7 @@ const Navbar = () => {
                   href="/properties"
                   className={`${
                     pathname === "/properties" ? "after:scale-x-100" : ""
-                  } rounded-md py-2 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+                  } rounded-md py-1 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                 >
                   PROPERTIES
                 </Link>
@@ -97,7 +97,7 @@ const Navbar = () => {
                     href="/dashboard/add-property"
                     className={`${
                       pathname === "/dashboard/add-property" ? "after:scale-x-100" : ""
-                    } rounded-md py-2 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+                    } rounded-md py-1 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                   >
                     LIST PROPERTY
                   </Link>
