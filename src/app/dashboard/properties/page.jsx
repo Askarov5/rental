@@ -6,7 +6,7 @@ import Link from "next/link";
 import propertyImageDefault from "@/assets/images/property-placeholder.jpg";
 import Spinner from "@/app/loading";
 import { toast } from "react-toastify";
-import { FaPencilAlt, FaPlusSquare, FaTrashAlt } from "react-icons/fa";
+import { FaPencilAlt, FaTrashAlt } from "react-icons/fa";
 
 const MyProperties = () => {
   const { data: session } = useSession();

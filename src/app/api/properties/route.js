@@ -11,7 +11,7 @@ export const GET = async (request) => {
     // get page and pageSize from search params
     const url = new URL(request.url);
     const page = url.searchParams.get("page") || 1;
-    const pageSize = url.searchParams.get("pageSize") || 3;
+    const pageSize = url.searchParams.get("pageSize") || 6;
 
     const skip = (page - 1) * pageSize; // calculate the number of documents to skip
     const total = await Property.countDocuments(); // get the total number of properties

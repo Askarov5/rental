@@ -40,7 +40,7 @@ const SavedPropertiesPage = () => {
             My Listings
           </h3>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {properties.length === 0 ? (
             <h3>No Saved Properties Found</h3>
           ) : (

@@ -13,7 +13,7 @@ module.exports = {
         'hero': "url('../images/hero.jpg')",
       },
       fontFamily:{
-        sans: ['Poppins', 'sans-serif']
+        sans: ['Barlow', 'sans-serif']
       },
       gridTemplateColumns: {
         '70/30': '70% 28%'

@@ -11,7 +11,7 @@ const InfoBoxes = () => {
   return (
     <section>
       <div className="container-xl lg:container m-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-lg">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 p-4 rounded-md">
           <InfoBox
             heading="For Renters"
             buttonInfo={{
@@ -37,7 +37,7 @@ const InfoBoxes = () => {
                 <span>
                   <FaEnvelope className="text-2xl" />
                 </span>
-                <span>Contact owner or share with friends</span>
+                <span>Reach out to the property owner directly</span>
               </li>
             </ul>
           </InfoBox>
@@ -62,7 +62,7 @@ const InfoBoxes = () => {
                 <span>
                   <FaCalendarAlt className="text-2xl  text-blue-600" />
                 </span>
-                <span>Rent as an airbnb or long term.</span>
+                <span>Rent as an airbnb or long term</span>
               </li>
               <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
                 <span><FaPhone className="text-2xl  text-blue-600" /></span>

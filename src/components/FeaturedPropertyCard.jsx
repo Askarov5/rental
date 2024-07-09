@@ -77,7 +77,7 @@ const FeaturedPropertyCard = ({ property }) => {
   return (
     <Link
       href={`/properties/${property._id}`}
-      className="bg-white shadow-md hover:shadow-xl transition-shadow rounded-xl flex flex-col md:flex-row"
+      className="bg-white shadow-md hover:shadow-xl transition-shadow rounded-lg flex flex-col md:flex-row"
     >
       <Image
         src={property.images[0] || PropertyPlaceHolderImage}
@@ -85,7 +85,7 @@ const FeaturedPropertyCard = ({ property }) => {
         height={0}
         width={0}
         sizes="100vw"
-        className="object-cover rounded-t-xl md:rounded-tr-none md:rounded-l-xl w-full md:w-2/5"
+        className="object-cover rounded-t-lg md:rounded-tr-none md:rounded-l-lg w-full md:w-2/5"
       />
       <div className="p-5 w-full flex flex-wrap items-stretch">
         <div className="flex justify-between items-center mb-3 w-full">
@@ -135,14 +135,14 @@ const FeaturedPropertyCard = ({ property }) => {
         </div>
 
         <div className="flex flex-row justify-between items-center w-full">
-          <div className="flex align-middle gap-2 mb-4 lg:mb-0">
-            <FaMapMarkerAlt className=" text-lg text-orange-700"></FaMapMarkerAlt>
+          <div className="flex align-middle gap-2">
+            <FaMapMarkerAlt className="text-lg text-orange-700"></FaMapMarkerAlt>
             <span className="text-orange-700">
               {" "}
               {property.location.city + ", " + property.location.state}{" "}
             </span>
           </div>
-          <h3 className="px-4 py-2 rounded-lg text-blue-500 text-2xl font-bold text-right md:text-center lg:text-right">
+          <h3 className="px-4 py-2 rounded-md text-blue-500 text-xl md:text-2xl font-bold text-right md:text-center lg:text-right">
             $ {getRateDisplay()}
           </h3>
         </div>

@@ -27,6 +27,7 @@ const ProfilePage = () => {
               sizes="100vw"
               src={profileImage || profileImageDefault}
               alt="User Profile Picture"
+              priority={true}
             />
           </div>
           <h2 className="text-xl mb-4">

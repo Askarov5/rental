@@ -82,7 +82,7 @@ const Navbar = () => {
                     pathname === "/" ? "after:scale-x-100" : ""
                   }  rounded-md py-2 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                 >
-                  Home
+                  HOME
                 </Link>
                 <Link
                   href="/properties"
@@ -90,7 +90,7 @@ const Navbar = () => {
                     pathname === "/properties" ? "after:scale-x-100" : ""
                   } rounded-md py-2 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                 >
-                  Properties
+                  PROPERTIES
                 </Link>
                 {session && (
                   <Link
@@ -99,7 +99,7 @@ const Navbar = () => {
                       pathname === "/dashboard/add-property" ? "after:scale-x-100" : ""
                     } rounded-md py-2 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                   >
-                    List a Property
+                    LIST PROPERTY
                   </Link>
                 )}
               </div>
@@ -118,7 +118,7 @@ const Navbar = () => {
                       className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                     >
                       <FaGoogle className="text-white mr-2"></FaGoogle>
-                      <span>Login or Register</span>
+                      <span>LOGIN/REGISTER</span>
                     </button>
                   ))}
               </div>
@@ -197,7 +197,7 @@ const Navbar = () => {
                         setIsProfileMenuOpen(false);
                       }}
                     >
-                      Your Profile
+                      PROFILE
                     </Link>
                     <Link
                       href="/dashboard/messages"
@@ -211,7 +211,7 @@ const Navbar = () => {
                         setIsProfileMenuOpen(false);
                       }}
                     >
-                      Messages
+                      MESSAGES
                     </Link>
                     <Link
                       href="/dashboard/properties"
@@ -225,7 +225,7 @@ const Navbar = () => {
                         setIsProfileMenuOpen(false);
                       }}
                     >
-                      My Listings
+                      MY LISTINGS
                     </Link>
                     <Link
                       href="/dashboard/bookmarks"
@@ -239,7 +239,7 @@ const Navbar = () => {
                         setIsProfileMenuOpen(false);
                       }}
                     >
-                      Saved Properties
+                      BOOKMARKS
                     </Link>
                     <button
                       className="block px-4 py-2 text-sm text-gray-700"
@@ -251,7 +251,7 @@ const Navbar = () => {
                         signOut();
                       }}
                     >
-                      Sign Out
+                      SIGN OUT
                     </button>
                   </div>
                 )}
@@ -271,7 +271,7 @@ const Navbar = () => {
                 pathname === "/" ? "after:scale-x-100" : ""
               } rounded-md px-3 py-2 text-base font-medium text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
             >
-              Home
+              HOME
             </Link>
             <Link
               href="/properties"
@@ -279,7 +279,7 @@ const Navbar = () => {
                 pathname === "/properties" ? "after:scale-x-100": ""
               } rounded-md px-3 py-2 text-base font-medium text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
             >
-              Properties
+              PROPERTIES
             </Link>
             {session && (
               <Link
@@ -288,7 +288,7 @@ const Navbar = () => {
                   pathname === "/properties/add" ? "after:scale-x-100" : ""
                 } rounded-md px-3 py-2 text-base font-medium text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
               >
-                Add Property
+                ADD PROPERTY
               </Link>
             )}
 
@@ -301,7 +301,7 @@ const Navbar = () => {
                   className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                 >
                   <FaGoogle className="text-white mr-2"></FaGoogle>
-                  <span>Login or Register</span>
+                  <span>LOGIN/REGISTER</span>
                 </button>
               ))}
           </div>

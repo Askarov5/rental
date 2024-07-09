@@ -80,7 +80,7 @@ const PropertyCard = ({ property }) => {
   return (
     <Link
       href={`/properties/${property._id}`}
-      className="rounded-xl shadow-md hover:shadow-xl transition-shadow relative"
+      className="rounded-lg shadow-md hover:shadow-xl transition-shadow relative"
     >
       <Image
         src={property.images[0] || PropertyPlaceHolderImage}
@@ -88,7 +88,8 @@ const PropertyCard = ({ property }) => {
         height={0}
         width={0}
         sizes="100vw"
-        className="w-full h-auto rounded-t-xl"
+        className="w-full h-auto rounded-t-lg"
+        priority={true}
       />
       <div className="p-4">
         <div className="w-full flex justify-between items-center mb-4">
@@ -153,7 +154,7 @@ const PropertyCard = ({ property }) => {
               {property.location.city}, {property.location.state}
             </span>
           </div>
-          <h3 className=" px-4 py-2 rounded-lg text-blue-500 text-2xl font-bold text-right md:text-center lg:text-right">
+          <h3 className=" px-4 py-2 rounded-md text-blue-500 text-xl lg:text-2xl font-bold text-right md:text-center lg:text-right">
             ${getRateDisplay()}
           </h3>
         </div>

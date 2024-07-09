@@ -8,12 +8,17 @@ export const GET = async (req) => {
   try {
     // get search params from url query
     const { searchParams } = new URL(req.url);
+
     const location = searchParams.get("location") || "";
     const propertyType = searchParams.get("propertyType") || "Any";
     const bedrooms = searchParams.get("bedrooms") || "Any";
     const bathrooms = searchParams.get("bathrooms") || "Any";
     const rateMax = searchParams.get("rateMax") || "9999999";
     const rateType = searchParams.get("rateType") || "Any";
+    // pagination params
+    const url = new URL(req.url);
+    const page = url.searchParams.get("page") || 1;
+    const pageSize = url.searchParams.get("pageSize") || 6;
 
     // get properties based on the search criteria from the database
     await connectDB();
@@ -71,9 +76,21 @@ export const GET = async (req) => {
       }
     }
 
-    const properties = await Property.find(query);
+    // get total number of properties based on the search criteria and calculate pagination
+    const skip = (page - 1) * pageSize; // calculate the number of documents to skip
+    const total = await Property.countDocuments(query); // get the total number of properties
 
-    return new Response(JSON.stringify(properties), { status: 200 });
+    // get properties based on the search criteria
+    const properties = await Property.find(query).skip(skip).limit(pageSize);
+
+    const result = {
+      properties,
+      total,
+      page: parseInt(page),
+      pageSize: parseInt(pageSize),
+    }
+
+    return new Response(JSON.stringify(result), { status: 200 });
   } catch (error) {
     console.error(error);
     return new Response(
