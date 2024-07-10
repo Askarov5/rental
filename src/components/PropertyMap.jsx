@@ -58,7 +58,7 @@ const PropertyMap = ({ property }) => {
     };
 
     fetchCoordinates();
-  }, [street, city, state, zipcode]);
+  }, [street, city, state, zipcode, viewport]);
 
   if (loading) return <Spinner loading={loading} />;
 

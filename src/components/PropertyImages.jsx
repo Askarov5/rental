@@ -14,7 +14,7 @@ const PropertyImages = ({ images }) => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 justify-around items-center">
             <Gallery>
               {images.map((image, index) => (
-                <div className="w-full h-auto max-h-[300px] overflow-hidden rounded-md">
+                <div className="w-full h-auto max-h-[300px] overflow-hidden rounded-md" key={index}>
                 <Item
                   original={image}
                   thumbnail={image}
