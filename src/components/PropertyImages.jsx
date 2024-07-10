@@ -14,7 +14,14 @@ const PropertyImages = ({ images }) => {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 justify-around items-center">
             <Gallery>
               {images.map((image, index) => (
-                <Item original={image} thumbnail={image} key={index}
+                <div className="w-full h-auto max-h-[300px] overflow-hidden rounded-md">
+                <Item
+                  original={image}
+                  thumbnail={image}
+                  key={index}
+                  width="1024"
+                  height="768"
+                  objectFit="contain"
                 >
                   {({ ref, open }) => (
                     <Image
@@ -26,11 +33,11 @@ const PropertyImages = ({ images }) => {
                       width={0}
                       height={0}
                       sizes="100vw"
-                      className="rounded-md shadow-md w-full mx-auto !h-auto max-w-full max-h-full object-contain cursor-pointer transition-transform transform hover:scale-105 duration-300 ease-in-out"
+                      className="rounded-md shadow-md w-full max-h-fit object-contain cursor-pointer duration-300 ease-in-out "
                       priority={true}
                     />
                   )}
-                </Item>
+                </Item></div>
               ))}
             </Gallery>
           </div>
