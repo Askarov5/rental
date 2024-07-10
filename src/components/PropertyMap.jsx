@@ -76,7 +76,8 @@ const PropertyMap = ({ property }) => {
           longitude: lng,
           zoom: 12,
         }}
-        style={{ width: "100%", height: "500px" }}
+        className="w-full h-[300px] md:w-[400px]"
+        style={{ width: "100%", height: "400px" }}
         mapStyle="mapbox://styles/mapbox/streets-v9"
       >
         <Marker latitude={lat} longitude={lng}>

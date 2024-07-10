@@ -46,7 +46,7 @@ const PropertySearchForm = () => {
               type="text"
               id="location"
               placeholder="Enter Keywords or Location"
-              className="w-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full p-2 md:px-4 md:py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
               value={location}
               onChange={(e) => setSearchCriteria({...searchCriteria, location: e.target.value})}
             />
@@ -57,7 +57,7 @@ const PropertySearchForm = () => {
             </label>
             <select
               id="property-type"
-              className="w-full h-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
+              className="w-full h-full p-2 md:px-4 md:py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
               style={{ WebkitAppearance: "none", appearance: "none" }}
               value={propertyType}
               onChange={(e) => setSearchCriteria({ ...searchCriteria, propertyType: e.target.value })}
@@ -74,7 +74,7 @@ const PropertySearchForm = () => {
 
             <button
               type="button"
-              className=" flex items-center px-4 py-3 rounded-md bg-white text-black hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
+              className=" flex items-center px-3 p-2 md:px-4 md:py-3 rounded-md bg-white text-black hover:bg-blue-500 hover:text-white focus:outline-none focus:ring focus:ring-blue-500"
               onClick={() => setIsAdvancedSearchActive(!isAdvancedSearchActive)}
             >
               {isAdvancedSearchActive ? <FaSearchMinus /> : <FaSearchPlus />}
@@ -96,7 +96,7 @@ const PropertySearchForm = () => {
           </label>
           <select
             id="property-bedrooms"
-            className="w-full h-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
+            className="w-full h-full p-2 md:px-4 md:py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
             style={{ WebkitAppearance: "none", appearance: "none" }}
             value={bedrooms}
             onChange={(e) => setSearchCriteria({...searchCriteria, bedrooms: e.target.value})}
@@ -115,7 +115,7 @@ const PropertySearchForm = () => {
           </label>
           <select
             id="property-bathrooms"
-            className="w-full h-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
+            className="w-full h-full p-2 md:px-4 md:py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
             style={{ WebkitAppearance: "none", appearance: "none"}}
             value={bathrooms}
             onChange={(e) => setSearchCriteria({...searchCriteria, bathrooms: e.target.value})}
@@ -133,7 +133,7 @@ const PropertySearchForm = () => {
           <select
             name=""
             id="property-rate-max"
-            className="w-full h-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
+            className="w-full h-full p-2 md:px-4 md:py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
             style={{ WebkitAppearance: "none", appearance: "none" }}
             value={rateMax}
             onChange={(e) => setSearchCriteria({...searchCriteria, rateMax: e.target.value})}
@@ -179,7 +179,7 @@ const PropertySearchForm = () => {
           <select
             name=""
             id="property-rate-type"
-            className="w-full h-full px-4 py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
+            className="w-full h-full p-2 md:px-4 md:py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
             style={{ WebkitAppearance: "none", appearance: "none" }}
             value={rateType}
             onChange={(e) => setSearchCriteria({...searchCriteria, rateType: e.target.value})}
@@ -193,7 +193,7 @@ const PropertySearchForm = () => {
       <div className="w-full">
         <button
           type="submit"
-          className="w-full px-6 py-3 rounded-md bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
+          className="w-full p-2 md:px-6 md:py-3 rounded-md bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
         >
           Search
         </button>

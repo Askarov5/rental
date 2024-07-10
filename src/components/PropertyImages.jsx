@@ -11,7 +11,7 @@ const PropertyImages = ({ images }) => {
           <div className="text-lg font-bold mb-6 border-b">
             <h3 className="">Property Images</h3>
           </div>
-          <div className="grid grid-cols-3 gap-2 justify-around items-center">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-4 justify-around items-center">
             <Gallery>
               {images.map((image, index) => (
                 <Item original={image} thumbnail={image} key={index}
@@ -26,7 +26,7 @@ const PropertyImages = ({ images }) => {
                       width={0}
                       height={0}
                       sizes="100vw"
-                      className="rounded-md shadow-md w-auto h-auto max-w-full max-h-full"
+                      className="rounded-md shadow-md w-full mx-auto !h-auto max-w-full max-h-full object-contain cursor-pointer transition-transform transform hover:scale-105 duration-300 ease-in-out"
                       priority={true}
                     />
                   )}
