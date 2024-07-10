@@ -92,6 +92,8 @@ const PropertyContactForm = ({ property }) => {
               id="name"
               type="text"
               placeholder="Enter your name"
+              maxLength={30}
+              minLength={3}
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -108,6 +110,7 @@ const PropertyContactForm = ({ property }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
               type="email"
+              minLength={3}
               placeholder="Enter your email"
               required
               value={email}
@@ -125,6 +128,8 @@ const PropertyContactForm = ({ property }) => {
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="phone"
               type="text"
+              maxLength={15}
+              minLength={10}
               placeholder="Enter your phone number"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
@@ -140,6 +145,7 @@ const PropertyContactForm = ({ property }) => {
             <textarea
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 h-44 focus:outline-none focus:shadow-outline"
               id="message"
+              maxLength={500}
               placeholder="Enter your message"
               value={message}
               onChange={(e) => setMessage(e.target.value)}
