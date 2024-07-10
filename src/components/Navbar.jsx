@@ -283,9 +283,9 @@ const Navbar = () => {
             </Link>
             {session && (
               <Link
-                href="/properties/add"
+                href="/dashboard/add-property"
                 className={`${
-                  pathname === "/properties/add" ? "after:scale-x-100" : ""
+                  pathname === "/dashboard/add-property" ? "after:scale-x-100" : ""
                 } rounded-md px-3 py-2 text-base font-medium text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
               >
                 ADD PROPERTY

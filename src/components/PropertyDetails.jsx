@@ -74,7 +74,7 @@ const PropertyDetails = ({ property }) => {
       <div className="bg-white p-6 rounded-md shadow-md mt-6">
         <h3 className="text-lg font-bold mb-6 border-b">Amenities</h3>
 
-        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 list-none">
+        <ul className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 list-none">
           {property.amenities.length > 0
             ? property.amenities.map((amenity) => (
                 <li className="mt-2" key={amenity}>
