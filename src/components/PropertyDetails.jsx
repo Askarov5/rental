@@ -7,7 +7,7 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import PropertyMap from "./PropertyMap";
-import PropertyType from "./PropertyType";
+import PropertyTypeLabel from "./PropertyTypeLabel";
 import { useTranslations } from "next-intl";
 
 const PropertyDetails = ({ property }) => {
@@ -17,7 +17,7 @@ const PropertyDetails = ({ property }) => {
   return (
     <main>
       <div className="bg-white p-6 rounded-md shadow-md text-center md:text-left">
-        <div className="text-gray-500 mb-4 text-end flex items-center justify-end"><PropertyType type={property.type} /></div>
+        <div className="text-gray-500 mb-4 text-end flex items-center justify-end"><PropertyTypeLabel type={property.type} /></div>
         <h1 className="text-3xl font-bold mb-4">{property.name}</h1>
         <div className="text-gray-500 mb-4 flex align-middle justify-center md:justify-start">
           {<FaMapMarkerAlt className="text-lg text-orange-700 mr-2" />}

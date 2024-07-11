@@ -6,7 +6,7 @@ import {
   FaWarehouse,
 } from "react-icons/fa";
 
-const PropertyType = ({ type }) => {
+const PropertyTypeLabel = ({ type }) => {
   const t = useTranslations("PropertyTypes");
   
   let propertyTypeComponent;
@@ -58,4 +58,4 @@ const PropertyType = ({ type }) => {
   return propertyTypeComponent;
 };
 
-export default PropertyType;
+export default PropertyTypeLabel;

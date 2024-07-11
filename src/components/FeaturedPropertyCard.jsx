@@ -8,7 +8,7 @@ import {
 } from "react-icons/fa";
 import PropertyPlaceHolderImage from "@/assets/images/property-placeholder.jpg";
 import Link from "next/link";
-import PropertyType from "./propertyType";
+import PropertyTypeLabel from "./PropertyTypeLabel";
 import RateOfPropertyCard from "./RateOfPropertyCard";
 import { useTranslations } from "next-intl";
 
@@ -49,7 +49,7 @@ const FeaturedPropertyCard = ({ property }) => {
             )}
           </div>
           <div className="text-gray-600 text-sm p-1 rounded-md bg-blue-50 text-end flex items-center">
-            <PropertyType type={property.type} />
+            <PropertyTypeLabel type={property.type} />
           </div>
         </div>
 
