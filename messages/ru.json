@@ -36,6 +36,11 @@
     "title": "Добро пожаловать на сайт",
     "description": "Это описание главной страницы"
   },
+  "HomeRecentProperties" : {
+    "title": "Недавно добавленные",
+    "notFound": "Недавние Объекты не найдены",
+    "viewAll": "Просмотреть все"
+  },
   "LocaleSwitcher": {
     "ru": "Русский",
     "en": "English",

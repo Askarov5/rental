@@ -36,6 +36,11 @@
     "title": "Rental.KG | Properties for rent in Kyrgyzstan",
     "description": "Find your perfect property to rent in Kyrgyzstan"
   },
+  "HomeRecentProperties" : {
+    "title": "Recent Properties Properties",
+    "notFound": "No Recent Properties Found",
+    "viewAll": "View All Properties"
+  },
   "LocaleSwitcher": {
     "ru": "Русский",
     "en": "English",
