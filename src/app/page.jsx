@@ -5,12 +5,13 @@ import FeaturedProperties from "@/components/FeaturedProperties";
 
 export const metadata = {
   title: "Rental.KG | Properties for rent in Kyrgyzstan",
-  description: " Find your perfect property to rent in Kyrgyzstan",
+  description: "Find your perfect property to rent in Kyrgyzstan",
 };
 
 export const dynamic = "force-dynamic";
 
-const HomePage = async () => {
+const HomePage = () => {
+
   return (
     <>
       <Hero />

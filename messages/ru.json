@@ -1,0 +1,52 @@
+{
+  "Navigation": {
+    "home": "ГЛАВНАЯ",
+    "properties": "Свойства",
+    "listProperty": "добавить недвижимость",
+    "profile": "Профиль",
+    "messages": "Сообщения",
+    "myListings": "Мои объявления",
+    "bookmarks": "Закладки",
+    "about": "О нас",
+    "contact": "Контакт",
+    "login": "Войти",
+    "register": "Зарегистрироваться",
+    "logout": "Выйти",
+    "viewNotifications": "Просмотреть уведомления",
+    "openMainMenu": "Открыть главное меню",
+    "openUserMenu": "Открыть меню пользователя"
+  },
+  "Hero": {
+    "header": "Найдите идеальную арендуемую недвижимость в Кыргызстане",
+    "subheader": "Найдите для себя лучшую недвижимость, которая подходит вашим краткосрочным или долгосрочным потребностям."
+  },
+  "SearchBox": {
+    "location": "Местоположение",
+    "searchInputPlaceholder": "Введите ключевые слова или местоположение",
+    "propertyType": "Тип недвижимости",
+    "bedrooms": "Спальни",
+    "bathrooms": "Ванные комнаты",
+    "maxRate": "Макс. цена",
+    "lengthOfStay": "За ночь/месяц",
+    "nightly": "суточный",
+    "monthly": "ежемесячный",
+    "searchButton": "Поиск"
+  },
+  "Home": {
+    "title": "Добро пожаловать на сайт",
+    "description": "Это описание главной страницы"
+  },
+  "LocaleSwitcher": {
+    "ru": "Русский",
+    "en": "English",
+    "label": "Language"
+  },
+  "DashboardSidebar": {
+    "dashboard": "Профиль",
+    "addProperty": "Добавить недвижимость",
+    "myListings": "Мои объявления",
+    "bookmarks": "Закладки",
+    "messages": "Сообщения",
+    "documents": "Документы"
+  }
+}

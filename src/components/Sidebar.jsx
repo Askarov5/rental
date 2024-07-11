@@ -10,30 +10,36 @@ import {
   FaPlusSquare,
 } from "react-icons/fa";
 
+
 const navigation = [
   {
+    
     name: "Dashboard",
     href: "/dashboard",
     icon: FaUserAlt,
     current: true,
+    tProp: "dashboard",
   },
   {
     name: "Add Property",
     href: "/dashboard/add-property",
     icon: FaPlusSquare,
     current: false,
+    tProp: "addProperty"
   },
   {
     name: "My Listings",
     href: "/dashboard/properties",
     icon: FaFolderOpen,
     current: false,
+    tProp: "myListings"
   },
   {
     name: "Saved Properties",
     href: "/dashboard/bookmarks",
     icon: FaBookmark,
     current: false,
+    tProp: "bookmarks"
   },
   {
     name: "Messages",
@@ -41,12 +47,14 @@ const navigation = [
     icon: FaEnvelopeOpen,
     count: "0",
     current: false,
+    tProp: "messages"
   },
   {
     name: "Documents",
     href: "/dashboard/documents",
     icon: FaFileAlt,
     current: false,
+    tProp: "documents"
   },
 ];
 

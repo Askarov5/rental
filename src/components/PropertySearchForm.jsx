@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaSearchMinus, FaSearchPlus } from "react-icons/fa";
 import { useGlobalContext } from "@/context/GlobalContext";
+import { useTranslations } from "next-intl";
 
 const PropertySearchForm = () => {
   const [isAdvancedSearchActive, setIsAdvancedSearchActive] = useState(false);
@@ -31,6 +32,9 @@ const PropertySearchForm = () => {
     fetch("/api/properties", {});
   };
 
+  // translation
+  const t = useTranslations("SearchBox");
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -40,12 +44,12 @@ const PropertySearchForm = () => {
         <div className="w-full space-y-2 items-stretch sm:flex sm:space-y-0 sm:space-x-2">
           <div className="w-full">
             <label htmlFor="location" className="sr-only">
-              Location
+              {t("location")}
             </label>
             <input
               type="text"
               id="location"
-              placeholder="Enter Keywords or Location"
+              placeholder={t("searchInputPlaceholder")}
               className="w-full p-2 md:px-4 md:py-3 rounded-md bg-white text-gray-800 focus:outline-none focus:ring focus:ring-blue-500"
               value={location}
               onChange={(e) => setSearchCriteria({...searchCriteria, location: e.target.value})}
@@ -53,7 +57,7 @@ const PropertySearchForm = () => {
           </div>
           <div className="w-full flex gap-2">
             <label htmlFor="property-type" className="sr-only">
-              Property Type
+            {t("propertyType")}
             </label>
             <select
               id="property-type"
@@ -62,7 +66,7 @@ const PropertySearchForm = () => {
               value={propertyType}
               onChange={(e) => setSearchCriteria({ ...searchCriteria, propertyType: e.target.value })}
             >
-              <option value="Any">Property Type</option>
+              <option value="Any">{t("propertyType")}</option>
               <option value="Apartment">Apartment</option>
               <option value="Studio">Studio</option>
               <option value="Condo">Condo</option>
@@ -92,7 +96,7 @@ const PropertySearchForm = () => {
       >
         <div className="flex-1">
           <label htmlFor="property-bedrooms" className="sr-only">
-            Bedrooms
+            {t("bedrooms")}
           </label>
           <select
             id="property-bedrooms"
@@ -101,7 +105,7 @@ const PropertySearchForm = () => {
             value={bedrooms}
             onChange={(e) => setSearchCriteria({...searchCriteria, bedrooms: e.target.value})}
           >
-            <option value="Any">Bedrooms</option>
+            <option value="Any">{t('bedrooms')}</option>
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -111,7 +115,7 @@ const PropertySearchForm = () => {
         </div>
         <div className="flex-1">
           <label htmlFor="property-bathrooms" className="sr-only">
-            Bathrooms
+            {t("bathrooms")}
           </label>
           <select
             id="property-bathrooms"
@@ -120,7 +124,7 @@ const PropertySearchForm = () => {
             value={bathrooms}
             onChange={(e) => setSearchCriteria({...searchCriteria, bathrooms: e.target.value})}
           >
-            <option value="Any">Bathrooms</option>
+            <option value="Any">{t("bathrooms")}</option>
             <option value="0">0</option>
             <option value="1">1</option>
             <option value="2">2</option>
@@ -138,7 +142,7 @@ const PropertySearchForm = () => {
             value={rateMax}
             onChange={(e) => setSearchCriteria({...searchCriteria, rateMax: e.target.value})}
           >
-            <option value="Any">Max Rate</option>
+            <option value="Any">{t("maxRate")}</option>
             <option value="100">100</option>
             <option value="120">120</option>
             <option value="140">140</option>
@@ -184,9 +188,9 @@ const PropertySearchForm = () => {
             value={rateType}
             onChange={(e) => setSearchCriteria({...searchCriteria, rateType: e.target.value})}
           >
-            <option value="Any">Nightly/Monthly</option>
-            <option value="Nightly">Nightly</option>
-            <option value="Monthly">Monthly</option>
+            <option value="Any">{t('lengthOfStay')}</option>
+            <option value="Nightly">{t('nightly')}</option>
+            <option value="Monthly">{t('monthly')}</option>
           </select>
         </div>
       </div>
@@ -195,7 +199,7 @@ const PropertySearchForm = () => {
           type="submit"
           className="w-full p-2 md:px-6 md:py-3 rounded-md bg-blue-500 text-white hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-500"
         >
-          Search
+          {t("searchButton")}
         </button>
       </div>
     </form>

@@ -1,0 +1,52 @@
+{
+  "Navigation": {
+    "home": "HOME",
+    "properties": "Properties",
+    "listProperty": "List Property",
+    "profile": "Profile",
+    "messages": "Messages",
+    "myListings": "My Listings",
+    "bookmarks": "Bookmarks",
+    "about": "About",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "logout": "Logout",
+    "viewNotifications": "View Notifications",
+    "openMainMenu": "Open Main Menu",
+    "openUserMenu": "Open User Menu"
+  },
+  "Hero": {
+    "header": "Find Your Perfect Rental in Kyrgyzstan",
+    "subheader": "Discover the perfect property that suits your needs."
+  },
+  "SearchBox": {
+    "location": "Location",
+    "searchInputPlaceholder": "Enter Keywords or Location",
+    "propertyType": "Property Type",
+    "bedrooms": "Bedrooms",
+    "bathrooms": "Bathrooms",
+    "maxRate": "Max Rate",
+    "lengthOfStay": "Nightly/Monthly",
+    "nightly": "Nightly",
+    "monthly": "Monthly",
+    "searchButton": "Search"
+  },
+  "Home": {
+    "title": "Rental.KG | Properties for rent in Kyrgyzstan",
+    "description": "Find your perfect property to rent in Kyrgyzstan"
+  },
+  "LocaleSwitcher": {
+    "ru": "Русский",
+    "en": "English",
+    "label": "Language"
+  },
+  "DashboardSidebar": {
+    "dashboard": "Dashboard",
+    "addProperty": "Add Property",
+    "myListings": "My Listings",
+    "bookmarks": "Saved Properties",
+    "messages": "Messages",
+    "documents": "Documents"
+  }
+}

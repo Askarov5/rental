@@ -7,6 +7,8 @@ import profileDefault from "@/assets/images/profile.png";
 import { FaGoogle, FaHome } from "react-icons/fa";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import UnreadMessageCount from "./UnreadMessageCount";
+import LocaleSwitcher from "./LocaleSwitcher";
+import {useTranslations} from 'next-intl';
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -27,6 +29,9 @@ const Navbar = () => {
     setAuthProviders();
   }, []);
 
+  // translations
+  const t = useTranslations('Navigation');
+
   return (
     <nav className="bg-white border-b border-blue-50 ">
       <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -42,7 +47,7 @@ const Navbar = () => {
               onClick={() => setIsMobileMenuOpen((prev) => !prev)}
             >
               <span className="absolute -inset-0.5"></span>
-              <span className="sr-only">Open main menu</span>
+              <span className="sr-only">{t('openMainMenu')}</span>
               <svg
                 className="block h-6 w-6"
                 fill="none"
@@ -75,14 +80,14 @@ const Navbar = () => {
             </Link>
             {/* <!-- Desktop Menu Hidden below md screens --> */}
             <div className="hidden md:ml-6 md:block">
-              <div className="flex space-x-4 text-blue-600 font-semibold">
+              <div className="flex space-x-4 uppercase text-blue-600 font-semibold">
                 <Link
                   href="/"
                   className={`${
                     pathname === "/" ? "after:scale-x-100" : ""
                   }  rounded-md py-1 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                 >
-                  HOME
+                  {t('home')}
                 </Link>
                 <Link
                   href="/properties"
@@ -90,7 +95,7 @@ const Navbar = () => {
                     pathname === "/properties" ? "after:scale-x-100" : ""
                   } rounded-md py-1 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                 >
-                  PROPERTIES
+                  {t('properties')}
                 </Link>
                 {session && (
                   <Link
@@ -99,14 +104,16 @@ const Navbar = () => {
                       pathname === "/dashboard/add-property" ? "after:scale-x-100" : ""
                     } rounded-md py-1 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                   >
-                    LIST PROPERTY
+                    {t('listProperty')}
                   </Link>
                 )}
               </div>
             </div>
           </div>
 
-          {/* <!-- Right Side Menu (Logged Out) --> */}
+          <div className="flex items-center justify-end">
+            <LocaleSwitcher />
+            {/* <!-- Right Side Menu (Logged Out) --> */}
           {!session && (
             <div className="hidden md:block md:ml-6">
               <div className="flex items-center">
@@ -134,7 +141,7 @@ const Navbar = () => {
                   className="relative rounded-full border border-blue-600 p-1 text-blue-600 hover:text-blue-500 hover:border-blue-500 focus:outline-none focus:ring-2 focus:text-blue-300 focus:ring-offset-2 focus:ring-offset-blue-500"
                 >
                   <span className="absolute -inset-1.5"></span>
-                  <span className="sr-only">View notifications</span>
+                  <span className="sr-only">{t('viewNotifications')}</span>
                   <svg
                     className="h-6 w-6"
                     fill="none"
@@ -164,7 +171,7 @@ const Navbar = () => {
                     onClick={() => setIsProfileMenuOpen((prev) => !prev)}
                   >
                     <span className="absolute -inset-1.5"></span>
-                    <span className="sr-only">Open user menu</span>
+                    <span className="sr-only">{t('openUserMenu')}</span>
                     <Image
                       className="h-8 w-8 rounded-full"
                       src={profileImage || profileDefault}
@@ -189,7 +196,7 @@ const Navbar = () => {
                       href="/dashboard"
                       className={`${
                         pathname === "/dashboard" ? "after:scale-x-100" : ""
-                      } px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+                      } px-4 py-2 text-sm uppercase text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-0"
@@ -197,13 +204,13 @@ const Navbar = () => {
                         setIsProfileMenuOpen(false);
                       }}
                     >
-                      PROFILE
+                      {t('profile')}
                     </Link>
                     <Link
                       href="/dashboard/messages"
                       className={ `${
                         pathname === "/dashboard/messages" ? "after:scale-x-100" : ""
-                      }  px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+                      }  px-4 py-2 text-sm uppercase text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-1"
@@ -211,13 +218,13 @@ const Navbar = () => {
                         setIsProfileMenuOpen(false);
                       }}
                     >
-                      MESSAGES
+                       {t('messages')}
                     </Link>
                     <Link
                       href="/dashboard/properties"
                       className={`${
                         pathname === "/dashboard/properties" ? "after:scale-x-100" : ""
-                      } px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+                      } px-4 py-2 text-sm uppercase text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-2"
@@ -225,13 +232,13 @@ const Navbar = () => {
                         setIsProfileMenuOpen(false);
                       }}
                     >
-                      MY LISTINGS
+                       {t('myListings')}
                     </Link>
                     <Link
                       href="/dashboard/bookmarks"
                       className={`${
                         pathname === "/dashboard/bookmarks" ? "after:scale-x-100" : ""
-                      } px-4 py-2 text-sm text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+                      } px-4 py-2 text-sm uppercase text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-2"
@@ -239,10 +246,10 @@ const Navbar = () => {
                         setIsProfileMenuOpen(false);
                       }}
                     >
-                      BOOKMARKS
+                       {t('bookmarks')}
                     </Link>
                     <button
-                      className="block px-4 py-2 text-sm text-gray-700"
+                      className="block px-4 py-2 text-sm uppercase text-gray-700"
                       role="menuitem"
                       tabIndex="-1"
                       id="user-menu-item-2"
@@ -251,13 +258,15 @@ const Navbar = () => {
                         signOut();
                       }}
                     >
-                      SIGN OUT
+                       {t('logout')}
                     </button>
                   </div>
                 )}
               </div>
             </div>
           )}
+          </div>
+          
         </div>
       </div>
 
@@ -269,7 +278,7 @@ const Navbar = () => {
               href="/"
               className={`${
                 pathname === "/" ? "after:scale-x-100" : ""
-              } rounded-md px-3 py-2 text-base font-medium text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+              } rounded-md px-3 py-2 text-base font-medium uppercase text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
             >
               HOME
             </Link>
@@ -277,7 +286,7 @@ const Navbar = () => {
               href="/properties"
               className={`${
                 pathname === "/properties" ? "after:scale-x-100": ""
-              } rounded-md px-3 py-2 text-base font-medium text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+              } rounded-md px-3 py-2 text-base font-medium uppercase text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
             >
               PROPERTIES
             </Link>
@@ -286,7 +295,7 @@ const Navbar = () => {
                 href="/dashboard/add-property"
                 className={`${
                   pathname === "/dashboard/add-property" ? "after:scale-x-100" : ""
-                } rounded-md px-3 py-2 text-base font-medium text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
+                } rounded-md px-3 py-2 text-base font-medium uppercase text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
               >
                 ADD PROPERTY
               </Link>
@@ -298,7 +307,7 @@ const Navbar = () => {
                 <button
                   onClick={() => signIn(provider.id)}
                   key={index}
-                  className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
+                  className="flex items-center text-white uppercase bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                 >
                   <FaGoogle className="text-white mr-2"></FaGoogle>
                   <span>LOGIN/REGISTER</span>

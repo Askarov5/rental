@@ -1,7 +1,7 @@
 import Sidebar from '@/components/Sidebar'
-import React from 'react'
 
-const DashboardLayout = ({children}) => {
+const DashboardLayout = async ({children}) => {
+
   return (
     <div className="grid grid-cols-4 grid-flow-row min-h-[100vh]">
         <aside className="col-span-1">
