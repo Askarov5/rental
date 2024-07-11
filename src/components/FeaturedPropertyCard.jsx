@@ -4,75 +4,16 @@ import {
   FaBath,
   FaRulerCombined,
   FaMoneyBill,
-  FaSquare,
-  FaHome,
-  FaColumns,
-  FaBuilding,
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import PropertyPlaceHolderImage from "@/assets/images/property-placeholder.jpg";
 import Link from "next/link";
+import PropertyType from "./propertyType";
+import RateOfPropertyCard from "./RateOfPropertyCard";
+import { useTranslations } from "next-intl";
 
 const FeaturedPropertyCard = ({ property }) => {
-  const { rates } = property;
-  const getRateDisplay = () => {
-    if (rates.monthly) {
-      return (
-        <span>
-          {rates.monthly.toLocaleString()}
-          <small>/MO</small>
-        </span>
-      );
-    } else if (rates.nightly) {
-      return (
-        <span>
-          {rates.nightly.toLocaleString()}
-          <small>/NIGHT</small>
-        </span>
-      );
-    }
-  };
-
-  const getTypeDisplay = (type) => {
-    switch (type) {
-      case "Studio":
-        return (
-          <>
-            <FaSquare className="inline mr-1 text-blue-600" /> Studio
-          </>
-        );
-      case "Room":
-        return (
-          <>
-            <FaColumns className="inline mr-1 text-blue-600" /> Room
-          </>
-        );
-      case "Apartment":
-        return (
-          <>
-            <FaBuilding className="inline mr-1 text-blue-600" /> Apartment
-          </>
-        );
-      case "Condo":
-        return (
-          <>
-            <FaBuilding className="inline mr-1 text-blue-600" /> Condo
-          </>
-        );
-      case "Home":
-        return (
-          <>
-            <FaBuilding className="inline mr-1 text-blue-600" /> Home
-          </>
-        );
-      default:
-        return (
-          <>
-            <FaHome className="inline mr-1 text-blue-600" /> {type}
-          </>
-        );
-    }
-  };
+  const t = useTranslations("PropertyCard");
 
   return (
     <Link
@@ -86,13 +27,14 @@ const FeaturedPropertyCard = ({ property }) => {
         width={0}
         sizes="100vw"
         className="object-cover rounded-t-lg md:rounded-tr-none md:rounded-l-lg w-full md:w-2/5"
+        priority
       />
       <div className="p-5 w-full flex flex-wrap items-stretch">
         <div className="flex justify-between items-center mb-3 w-full">
           <div className="flex justify-end text-green-700 text-sm">
             {property.rates.nightly ? (
               <p className="flex items-center gap-1 mr-2">
-                <FaMoneyBill /> <span>Nightly</span>
+                <FaMoneyBill /> <span>{t("nightly")}</span>
               </p>
             ) : (
               <p></p>
@@ -100,14 +42,14 @@ const FeaturedPropertyCard = ({ property }) => {
 
             {property.rates.monthly ? (
               <p className="flex items-center gap-1">
-                <FaMoneyBill /> <span>Monthly</span>
+                <FaMoneyBill /> <span>{t("monthly")}</span>
               </p>
             ) : (
               <p></p>
             )}
           </div>
           <div className="text-gray-600 text-sm p-1 rounded-md bg-blue-50 text-end flex items-center">
-            {getTypeDisplay(property.type)}
+            <PropertyType type={property.type} />
           </div>
         </div>
 
@@ -115,19 +57,23 @@ const FeaturedPropertyCard = ({ property }) => {
           <h3 className="text-xl font-bold mb-2">{property.name}</h3>
           <div className="flex justify-around gap-3 text-gray-500 mb-4">
             <p>
-              <FaBed className="inline mr-1 text-blue-600" /> {property.beds}{" "}
-              <span className="md:hidden lg:inline">Beds</span>
+              <FaBed className="inline mr-1 text-blue-600" />
+              {property.beds === 0 ? (
+                <small>{t("studio")}</small>
+              ) : (
+                <small className="md:hidden lg:inline">
+                  {property.beds} {t("bedrooms")}
+                </small>
+              )}
             </p>
             <p>
               <FaBath className="inline mr-1 text-blue-600" /> {property.baths}{" "}
-              <span className="md:hidden lg:inline">Baths</span>
+              <small className="md:hidden lg:inline">{t("bathrooms")}</small>
             </p>
             <p>
               <FaRulerCombined className="inline mr-1 text-blue-600" />
               {property.square_feet}{" "}
-              <span className="md:hidden lg:inline">
-                ft<sup>2</sup>
-              </span>
+              <small className="md:hidden lg:inline">{t("sqft")}</small>
             </p>
           </div>
 
@@ -143,7 +89,7 @@ const FeaturedPropertyCard = ({ property }) => {
             </span>
           </div>
           <h3 className="px-4 py-2 rounded-md text-blue-500 text-xl md:text-2xl font-bold text-right md:text-center lg:text-right">
-            $ {getRateDisplay()}
+            <RateOfPropertyCard rates={property.rates} />
           </h3>
         </div>
       </div>

@@ -1,7 +1,7 @@
 import Hero from "@/components/Hero";
 import InfoBoxes from "@/components/InfoBoxes";
-import HomeProperties from "@/components/HomeProperties";
 import FeaturedProperties from "@/components/FeaturedProperties";
+import RecentProperties from "@/components/RecentProperties";
 
 export const metadata = {
   title: "Rental.KG | Properties for rent in Kyrgyzstan",
@@ -17,7 +17,7 @@ const HomePage = () => {
       <Hero />
       <InfoBoxes />
       <FeaturedProperties />
-      <HomeProperties />
+      <RecentProperties />
     </>
   );
 };

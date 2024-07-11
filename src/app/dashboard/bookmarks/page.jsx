@@ -3,12 +3,22 @@ import { useState, useEffect } from "react";
 import PropertyCard from "@/components/PropertyCard";
 import Spinner from "@/app/loading";
 import { toast } from "react-toastify";
+import { useSession } from "next-auth/react";
 
 const SavedPropertiesPage = () => {
+  const { data: session } = useSession();
+  const userId = session?.user?.id;
+
   const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // check if user signed in, then check if the property is bookmarked
+    if (!userId) {
+      setLoading(false);
+      return;
+    }
+
     const fetchSavedProperties = async () => {
       try {
         const response = await fetch("/api/bookmarks");

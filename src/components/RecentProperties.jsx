@@ -3,13 +3,13 @@ import Link from "next/link";
 import { fetchProperties } from "@/utils/request";
 import { getTranslations } from "next-intl/server";
 
-const HomeProperties = async () => {
+const RecentProperties = async () => {
   const data = await fetchProperties();
   const recentProperties = data?.properties
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
 
-  const t = await getTranslations("HomeRecentProperties");
+  const t = await getTranslations("RecentProperties");
 
   return (
     <>
@@ -42,4 +42,4 @@ const HomeProperties = async () => {
   );
 };
 
-export default HomeProperties;
+export default RecentProperties;

@@ -5,92 +5,38 @@ import {
   FaBath,
   FaRulerCombined,
   FaMoneyBill,
-  FaSquare,
-  FaHome,
-  FaColumns,
-  FaBuilding,
   FaMapMarkerAlt,
 } from "react-icons/fa";
 
 import PropertyPlaceHolderImage from "@/assets/images/property-placeholder.jpg";
+import PropertyType from "./propertyType";
+import RateOfPropertyCard from "./RateOfPropertyCard";
+import { useTranslations } from "next-intl";
 
 const PropertyCard = ({ property }) => {
+  const t = useTranslations("PropertyCard");
+
   const { street, city, state, zipcode } = property.location;
   const address = ` ${street}, ${city}, ${state} ${zipcode}`;
   const { rates } = property;
-  const getRateDisplay = () => {
-    if (rates.monthly) {
-      return (
-        <span>
-          {rates.monthly.toLocaleString()}
-          <small>/MO</small>
-        </span>
-      );
-    } else if (rates.nightly) {
-      return (
-        <span>
-          {rates.nightly.toLocaleString()}
-          <small>/NIGHT</small>
-        </span>
-      );
-    }
-  };
-
-  const getTypeDisplay = (type) => {
-    switch (type) {
-      case "Studio":
-        return (
-          <>
-            <FaSquare className="inline mr-1 text-blue-600" /> Studio
-          </>
-        );
-      case "Room":
-        return (
-          <>
-            <FaColumns className="inline mr-1 text-blue-600" /> Room
-          </>
-        );
-      case "Apartment":
-        return (
-          <>
-            <FaBuilding className="inline mr-1 text-blue-600" /> Apartment
-          </>
-        );
-      case "Condo":
-        return (
-          <>
-            <FaBuilding className="inline mr-1 text-blue-600" /> Condo
-          </>
-        );
-      case "Home":
-        return (
-          <>
-            <FaBuilding className="inline mr-1 text-blue-600" /> Home
-          </>
-        );
-      default:
-        return (
-          <>
-            <FaHome className="inline mr-1 text-blue-600" /> {type}
-          </>
-        );
-    }
-  };
 
   return (
     <Link
       href={`/properties/${property._id}`}
       className="rounded-lg shadow-md hover:shadow-xl transition-shadow relative"
     >
-      <Image
-        src={property.images[0] || PropertyPlaceHolderImage}
-        alt=""
-        height={0}
-        width={0}
-        sizes="100vw"
-        className="w-full h-auto rounded-t-lg"
-        priority={true}
-      />
+      <div className="w-full max-h-[300px] overflow-hidden object-center">
+        <Image
+          src={property.images[0] || PropertyPlaceHolderImage}
+          alt=""
+          height={0}
+          width={0}
+          sizes="100vw"
+          className="w-full h-auto rounded-t-lg"
+          priority={true}
+        />
+      </div>
+
       <div className="p-4">
         <div className="w-full flex justify-between items-center mb-4">
           <div className="flex justify-start gap-1 items-center text-green-700 text-sm">
@@ -100,7 +46,7 @@ const PropertyCard = ({ property }) => {
                 title={`$ ${property.rates.nightly}`}
                 className="cursor-help"
               >
-                Nightly
+                {t("nightly")}
               </span>
             ) : (
               <></>
@@ -111,14 +57,14 @@ const PropertyCard = ({ property }) => {
                 title={`$ ${property.rates.monthly}`}
                 className="cursor-help"
               >
-                Monthly
+                {t("monthly")}
               </span>
             ) : (
               <></>
             )}
           </div>
           <div className="text-gray-600 text-sm p-1 rounded-md bg-blue-50 flex items-center">
-            {getTypeDisplay(property.type)}
+            <PropertyType type={property.type} />
           </div>
         </div>
         <div className="text-left md:text-center lg:text-left mb-4">
@@ -127,20 +73,18 @@ const PropertyCard = ({ property }) => {
         </div>
 
         <div className="flex justify-around gap-4 text-gray-500 mb-4">
-          <p>
+          <p className="text-lg">
             <FaBed className="inline mr-1 text-blue-600" /> {property.beds}{" "}
-            <span className="md:hidden lg:inline">Beds</span>
+            <small className="md:hidden lg:inline">{t("bedrooms")}</small>
           </p>
-          <p>
+          <p className="text-lg">
             <FaBath className="inline mr-1 text-blue-600" /> {property.baths}{" "}
-            <span className="md:hidden lg:inline">Baths</span>
+            <small className="md:hidden lg:inline">{t("bathrooms")}</small>
           </p>
-          <p>
+          <p className="text-lg">
             <FaRulerCombined className="inline mr-1 text-blue-600" />
             {property.square_feet}{" "}
-            <span className="md:hidden lg:inline">
-              ft<sup>2</sup>
-            </span>
+            <small className="md:hidden lg:inline">{t("sqft")}</small>
           </p>
         </div>
 
@@ -155,7 +99,7 @@ const PropertyCard = ({ property }) => {
             </span>
           </div>
           <h3 className=" px-4 py-2 rounded-md text-blue-500 text-xl lg:text-2xl font-bold text-right md:text-center lg:text-right">
-            ${getRateDisplay()}
+            <RateOfPropertyCard rates={property.rates} />
           </h3>
         </div>
       </div>

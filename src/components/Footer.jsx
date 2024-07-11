@@ -1,8 +1,10 @@
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import { FaHome } from "react-icons/fa";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const t = useTranslations("Footer");
   return (
     <footer className="bg-gray-200 py-4">
       <div className="container mx-auto flex flex-col md:flex-row items-center justify-between px-4">
@@ -15,17 +17,11 @@ const Footer = () => {
         </div>
         <div className="flex flex-wrap justify-center md:justify-start mb-4 md:mb-0">
           <ul className="flex space-x-4">
-            <li>
-              <Link href="/properties">Properties</Link>
-            </li>
-            <li>
-              <Link href="/terms">Terms of Service</Link>
-            </li>
           </ul>
         </div>
         <div>
           <p className="text-sm text-gray-500 mt-2 md:mt-0">
-            &copy; {currentYear} Rental.KG - All rights reserved.
+            &copy; {currentYear} Rental.KG - {t("rightsReserved")}
           </p>
         </div>
       </div>

@@ -1,7 +1,7 @@
 {
   "Navigation": {
     "home": "ГЛАВНАЯ",
-    "properties": "Свойства",
+    "properties": "недвижимость",
     "listProperty": "добавить недвижимость",
     "profile": "Профиль",
     "messages": "Сообщения",
@@ -16,31 +16,54 @@
     "openMainMenu": "Открыть главное меню",
     "openUserMenu": "Открыть меню пользователя"
   },
+  "Pagination": {
+    "previous": "Предыдущий",
+    "page": "Страница",
+    "of": "из",
+    "next": "Следующий"
+  },
+  "Footer": {
+    "rightsReserved": "Все права защищены"
+  },
   "Hero": {
     "header": "Найдите идеальную арендуемую недвижимость в Кыргызстане",
     "subheader": "Найдите для себя лучшую недвижимость, которая подходит вашим краткосрочным или долгосрочным потребностям."
   },
   "SearchBox": {
     "location": "Местоположение",
-    "searchInputPlaceholder": "Введите ключевые слова или местоположение",
+    "searchInputPlaceholder": "Введите местоположение",
     "propertyType": "Тип недвижимости",
     "bedrooms": "Спальни",
+    "studio": "Студия",
     "bathrooms": "Ванные комнаты",
+    "sharedBathroom": "Общая ванная",
     "maxRate": "Макс. цена",
     "lengthOfStay": "За ночь/месяц",
-    "nightly": "суточный",
-    "monthly": "ежемесячный",
+    "nightly": "суточно",
+    "monthly": "ежемесячно",
     "searchButton": "Поиск"
   },
-  "Home": {
-    "title": "Добро пожаловать на сайт",
-    "description": "Это описание главной страницы"
+  "PropertyTypes": {
+    "apartment": "Квартира",
+    "studio": "Студия",
+    "townhouse": "Таунхаус",
+    "house": "Дом",
+    "cabinOrCatage": "Домик/Коттедж",
+    "room": "Комната"
   },
-  "HomeRecentProperties" : {
-    "title": "Недавно добавленные",
-    "notFound": "Недавние Объекты не найдены",
-    "viewAll": "Просмотреть все"
+  "PropertyCard": {
+    "bedrooms": "Комнаты",
+    "studio": "Студия",
+    "bathrooms": "Ванные",
+    "sqft": "кв. футов",
+    "price": "Цена",
+    "night": "Ночь",
+    "month": "Месяц",
+    "nightly": "Cуточно",
+    "monthly": "Eжемесячно",
+    "viewDetails": "Подробнее"
   },
+
   "LocaleSwitcher": {
     "ru": "Русский",
     "en": "English",
@@ -53,5 +76,84 @@
     "bookmarks": "Закладки",
     "messages": "Сообщения",
     "documents": "Документы"
+  },
+  "Home": {
+    "title": "Добро пожаловать на сайт",
+    "description": "Это описание главной страницы"
+  },
+  "InfoBoxes": {
+    "forRenters": "Для Арендаторов",
+    "searchTxt": "Искать недвижимость, используя детальные фильтры",
+    "saveTxt": "Сохраняйте и делитесь своими любимыми объектами недвижимости легко",
+    "messageTxt": "Связывайтесь с владельцами недвижимости напрямую для запросов",
+    "buttonRenterTxt": "Начать поиск",
+
+    "forOwners": "Для Владельцев Недвижимости",
+    "listTxt": "Разместите вашу недвижимость в аренду за несколько минут",
+    "termsTxt": "Сдавайте в аренду на короткий или долгий срок",
+    "contactTxt": "Получайте запросы и сообщения от потенциальных арендаторов",
+    "buttonOwnerTxt": "Начать сдавать"
+  },
+  "FeaturedProperties": {
+    "title": "Избранные объекты",
+    "notFound": "Избранные объекты не найдены",
+    "viewAll": "Просмотреть все объекты"
+  },
+  "RecentProperties": {
+    "title": "Недавно добавленные",
+    "notFound": "Недавние объекты не найдены",
+    "viewAll": "Просмотреть все объекты"
+  },
+  "PropertyDetails": {
+    "title": "Подробности о недвижимости",
+    "description": "Описание",
+
+    "ratesOptions": "Цены и опции",
+    "nightly": "Cуточно",
+    "monthly": "Eжемесячно",
+
+    "desctionDetails": "Описание и подробности",
+    "sqft": "kв. футов",
+    "bedrooms": "Комнаты",
+    "studio": "Cтудия",
+    "bathrooms": "Ванные комнаты",
+    "sharedBathroom": "Общая ванная комната",
+
+    "amenities": "Удобства и услуги",
+
+    "propertyImages": "Изображения недвижимости"
+  },
+  "Amenities": {
+    "wifi": "Wifi",
+    "closet": "Гардеробная",
+    "washerDryer": "Стиральная машина и сушилка",
+    "balcony": "Балкон",
+    "airConditioning": "Кондиционер",
+    "tv": "Телевизор",
+    "hardwoodFloor": "Паркет",
+
+    "fullKitchen": "Полностью оборудованная кухня",
+    "kitchenUtensils": "Кухонные принадлежности",
+    "dishwasher": "Посудомоечная машина",
+    "coffeeMaker": "Кофеварка",
+    "microwave": "Микроволновая печь",
+    "refrigerator": "Холодильник",
+    "oven": "Духовка",
+    "stove": "Плита",
+
+    "parking": "Бесплатная парковка",
+    "swimmingPool": "Бассейн",
+    "hotTub": "Гидромассажная ванна",
+    "gym": "Тренажерный зал",
+    "elevator": "Доступ с лифтом",
+    "security": "Охрана",
+    "wheelchairAccessible": "Доступно для инвалидных колясок",
+    "petFriendly": "Можно с животными",
+    "fireplace": "Камин"
+  },
+  "Bookmarks": {
+    "buttonAddTxt": "Bookmark Property",
+    "buttonRemoveTxt": "Remove Bookmark",
+    "notFound": "No Bookmarked Properties Found"
   }
 }

@@ -1,6 +1,6 @@
 "use client";
-import { set } from "mongoose";
-import { useEffect, useState } from "react";
+
+import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";

@@ -16,6 +16,15 @@
     "openMainMenu": "Open Main Menu",
     "openUserMenu": "Open User Menu"
   },
+  "Pagination": {
+    "previous": "Previous",
+    "page": "Page",
+    "of": "of",
+    "next": "Next"
+  },
+  "Footer": {
+    "rightsReserved": "All Rights Reserved"
+  },
   "Hero": {
     "header": "Find Your Perfect Rental in Kyrgyzstan",
     "subheader": "Discover the perfect property that suits your needs."
@@ -25,22 +34,36 @@
     "searchInputPlaceholder": "Enter Keywords or Location",
     "propertyType": "Property Type",
     "bedrooms": "Bedrooms",
+    "studio": "Studio",
     "bathrooms": "Bathrooms",
+    "sharedBathroom": "Общая ванная",
     "maxRate": "Max Rate",
     "lengthOfStay": "Nightly/Monthly",
     "nightly": "Nightly",
     "monthly": "Monthly",
     "searchButton": "Search"
   },
-  "Home": {
-    "title": "Rental.KG | Properties for rent in Kyrgyzstan",
-    "description": "Find your perfect property to rent in Kyrgyzstan"
+  "PropertyTypes": {
+    "apartment": "Apartment/Condo",
+    "studio" :"Studio",
+    "townhouse": "Townhouse",
+    "house": "House",
+    "cabinOrCatage": "Cabin/Cottage",
+    "room": "Room"
   },
-  "HomeRecentProperties" : {
-    "title": "Recent Properties Properties",
-    "notFound": "No Recent Properties Found",
-    "viewAll": "View All Properties"
+  "PropertyCard": {
+    "bedrooms": "Bedrooms",
+    "studio": "Studio",
+    "bathrooms": "Bathrooms",
+    "sqft": "sqft",
+    "price": "Price",
+    "night": "Night",
+    "month": "MO",
+    "nightly": "Nightly",
+    "monthly": "Monthly",
+    "viewDetails": "View Details"
   },
+  
   "LocaleSwitcher": {
     "ru": "Русский",
     "en": "English",
@@ -53,5 +76,81 @@
     "bookmarks": "Saved Properties",
     "messages": "Messages",
     "documents": "Documents"
+  },
+  "Home": {
+    "title": "Rental.KG | Properties for rent in Kyrgyzstan",
+    "description": "Find your perfect property to rent in Kyrgyzstan"
+  },
+  "InfoBoxes": {
+    "forRenters": "For Renters",
+    "searchTxt": "Search for properties using detailed filters",
+    "saveTxt": "Save and share your favorite properties easily",
+    "messageTxt": "Contact property owners directly for inquiries",
+    "buttonRenterTxt": "Browse Properties",
+
+    "forOwners": "For Property Owners",
+    "listTxt": "List your property for rent in minutes",
+    "termsTxt": "Rent as an airbnb or long term",
+    "contactTxt": "Receive inquiries and messages from potential renters",
+    "buttonOwnerTxt": "List Property"
+  },
+  "FeaturedProperties": {
+    "title": "Featured Properties",
+    "notFound": "No Featured Properties Found"
+  },
+  "RecentProperties": {
+    "title": "Recent Properties Properties",
+    "notFound": "No Recent Properties Found",
+    "viewAll": "View All Properties"
+  },
+  "PropertyDetails": {
+    "title": "Property Details",
+    "description": "Description",
+    "ratesOptions": "Rates & Options",
+    "nightly": "Nightly",
+    "monthly": "Monthly",
+
+    "desctionDetails": "Description & Details",
+    "sqft": "sqft",
+    "bedrooms": "Bedrooms",
+    "studio": "Studio",
+    "bathrooms": "Bathrooms",
+    "sharedBathroom": "Shared Bathroom",
+
+    "amenities": "Amenities",
+
+    "propertyImages": "Property Images"
+  },
+  "Amenities": {
+    "wifi": "Wifi",
+    "closet": "Walk-in Closet",
+    "washerDryer": "Washer & Dryer",
+    "balcony": "Balcony",
+    "airConditioning": "Air Conditioning",
+    "tv": "TV",
+    "hardwoodFloor": "Hardwood Floor",
+
+    "fullKitchen": "Full Kitchen",
+    "kitchenUtensils": "Kitchen Utensils",
+    "dishwasher": "Dishwasher",
+    "coffeeMaker": "Coffee Maker",
+    "microwave": "Microwave",
+    "refrigerator": "Refrigerator",
+    "oven": "Oven",
+    "stove": "Stove",
+
+    "parking": "Free Parking",
+    "swimmingPool": "Swimming Pool",
+    "hotTub": "Hot Tub",
+    "gym": "Gym",
+    "elevator": "Elevator Access",
+    "security": "Security",
+    "wheelchairAccessible": "Wheelchair Accessible",
+    "petFriendly": "Pet Friendly",
+    "fireplace": "Fireplace"
+  },
+  "Bookmarks": {
+    "buttonAddTxt": "Bookmark Property",
+    "notFound": "No Bookmarked Properties Found"
   }
 }

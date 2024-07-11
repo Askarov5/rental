@@ -34,6 +34,7 @@ const PropertySearchForm = () => {
 
   // translation
   const t = useTranslations("SearchBox");
+  const tPropType = useTranslations("PropertyTypes");
 
   return (
     <form
@@ -67,13 +68,11 @@ const PropertySearchForm = () => {
               onChange={(e) => setSearchCriteria({ ...searchCriteria, propertyType: e.target.value })}
             >
               <option value="Any">{t("propertyType")}</option>
-              <option value="Apartment">Apartment</option>
-              <option value="Studio">Studio</option>
-              <option value="Condo">Condo</option>
-              <option value="House">House</option>
-              <option value="Cabin Or Cottage">Cabin or Cottage</option>
-              <option value="Loft">Loft</option>
-              <option value="Room">Room</option>
+              <option value="Apartment">{tPropType('apartment')}</option>
+              <option value="House">{tPropType('house')}</option>
+              <option value="Townhouse">{tPropType('townhouse')}</option>
+              <option value="Cabin Or Cottage">{tPropType('cabinOrCatage')}</option>
+              <option value="Room">{tPropType('room')}</option>
             </select>
 
             <button
@@ -106,7 +105,7 @@ const PropertySearchForm = () => {
             onChange={(e) => setSearchCriteria({...searchCriteria, bedrooms: e.target.value})}
           >
             <option value="Any">{t('bedrooms')}</option>
-            <option value="0">0</option>
+            <option value="0">{t('studio')}</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -125,7 +124,7 @@ const PropertySearchForm = () => {
             onChange={(e) => setSearchCriteria({...searchCriteria, bathrooms: e.target.value})}
           >
             <option value="Any">{t("bathrooms")}</option>
-            <option value="0">0</option>
+            <option value="0">{t('sharedBathroom')}</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

@@ -1,5 +1,4 @@
 import React from "react";
-import { FaPlus, FaPlusSquare } from "react-icons/fa";
 
 const DocumentsPage = () => {
   return (
