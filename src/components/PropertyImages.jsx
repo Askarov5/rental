@@ -3,6 +3,8 @@ import "photoswipe/dist/photoswipe.css";
 
 import { Gallery, Item } from "react-photoswipe-gallery";
 
+// const t = useTranslations('PropertyDetails');
+
 const PropertyImages = ({ images }) => {
   return (
     <section className="bg-blue-50">

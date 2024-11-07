@@ -1,0 +1,173 @@
+{
+    "Navigation": {
+        "home": "Башкы бет",
+        "properties": "Объекттер",
+        "listProperty": "Объектти кошуу",
+        "profile": "Профиль",
+        "messages": "Кабарлар",
+        "myListings": "Менин тизмелерим",
+        "bookmarks": "Букакчалар",
+        "about": "Биз жөнүндө",
+        "contact": "Байланыш",
+        "login": "Кирүү",
+        "register": "Катталыңыз",
+        "logout": "Чыгуу",
+        "viewNotifications": "Эскертүүлөрдү көрүү",
+        "openMainMenu": "Башкы менюну ачуунун",
+        "openUserMenu": "Колдонуучу менюсун ачуунун"
+    },
+    "Pagination": {
+        "previous": "Мурунку",
+        "page": "Баракча",
+        "of": "/",
+        "next": "Кийинки"
+    },
+    "Footer": {
+        "rightsReserved": "Бардык укуктар корголгон"
+    },
+    "Hero": {
+        "header": "Кыргызстандан идеалдуу ижара мүлкүңүздү табыңыз",
+        "subheader": "Сиздин муктаждыктарыңызга ылайыктуу идеалдуу объектти табыңыз."
+    },
+    "SearchBox": {
+        "location": "Орундун",
+        "searchInputPlaceholder": "Калууга же Килсеге өтүү",
+        "propertyType": "Объект тиби",
+        "bedrooms": "Уй бөлмөлөрү",
+        "studio": "Студия",
+        "bathrooms": "Жуунучу бөлмөлөр",
+        "sharedBathroom": "Бөлүшүлгөн ванна бөлмөсү",
+        "maxRate": "Жогорку баа",
+        "lengthOfStay": "Күндөр/Айлар",
+        "nightly": "Түн",
+        "monthly": "Айлык",
+        "searchButton": "Издөө"
+    },
+    "PropertyTypes": {
+        "apartment": "Квартира",
+        "studio": "Студия",
+        "townhouse": "Таунхаус",
+        "house": "Үй",
+        "cabinOrCatage": "Коттедж",
+        "room": "Бөлмө"
+    },
+    "PropertyCard": {
+        "bedrooms": "Бөлмөлөр",
+        "studio": "Студия",
+        "bathrooms": "Жуунучу бөлмөлөр",
+        "sqft": "кв. м",
+        "price": "Баасы",
+        "night": "Түн",
+        "month": "Ай",
+        "nightly": "Түн",
+        "monthly": "Айлык",
+        "viewDetails": "Толук маалыматты көрүү"
+    },
+    "LocaleSwitcher": {
+        "ru": "Русский",
+        "en": "English",
+        "kg": "Кыргызча",
+        "label": "Language"
+    },
+    "DashboardSidebar": {
+        "dashboard": "Башкаруу бети",
+        "addProperty": "Объектти кошуу",
+        "myListings": "Менин тизмелерим",
+        "bookmarks": "Жактырылган объекттер",
+        "messages": "Кабарлар",
+        "documents": "Документтер"
+    },
+    "Home": {
+        "title": "Rental.KG | Кыргызстандагы ижарага алынган объекттер",
+        "description": "Кыргызстандагы ижарага алуу үчүн идеалдуу объектти табыңыз"
+    },
+    "InfoBoxes": {
+        "forRenters": "Ижарачылар үчүн",
+        "searchTxt": "Туура фильтрлер менен объекттерди издеңиз",
+        "saveTxt": "Жактырылган объекттерди сактап, бөлүшүңүз",
+        "messageTxt": "Объект ээлери менен түздөн-түз байланышуу үчүн",
+        "buttonRenterTxt": "Объекттерди кароону",
+        "forOwners": "Объект ээйлери үчүн",
+        "listTxt": "Объектти бир нече мүнөттө ижарага жайгаштырыңыз",
+        "termsTxt": "Airbnb же узак мөөнөттүү ижара катары алып",
+        "contactTxt": "Ижарачылардан билдирүүлөр жана суранычтар алыңыз",
+        "buttonOwnerTxt": "Объектти жайгаштыруу"
+    },
+    "FeaturedProperties": {
+        "title": "Таанылган объекттер",
+        "notFound": "Таанылган объекттер табылган жок"
+    },
+    "RecentProperties": {
+        "title": "Жакында жайгаштырылган объекттер",
+        "notFound": "Жакында жайгаштырылган объекттер табылган жок",
+        "viewAll": "Бардык объекттерди көрүү"
+    },
+    "Breadcrumbs": {
+        "backToProps": "Объекттерге кайтуу"
+    },
+    "PropertyDetails": {
+        "notFound": "Объект табылган жок",
+        "title": "Объекттин Толук Маалыматтары",
+        "description": "Сипаттама",
+        "ratesOptions": "Баалар жана опциялар",
+        "nightly": "Түн",
+        "monthly": "Айлык",
+        "desctionDetails": "Сипаттама жана маалыматтар",
+        "sqft": "кв. м",
+        "bedrooms": "Бөлмөлөр",
+        "studio": "Студия",
+        "bathrooms": "Жуунучу бөлмөлөр",
+        "sharedBathroom": "Бөлүшүлгөн ванна бөлмөсү",
+        "amenities": "Ыңгайлуулуктар",
+        "propertyImages": "Объекттин сүрөттөрү"
+    },
+    "Amenities": {
+        "wifi": "Wi-Fi",
+        "closet": "Кийим сактагыч",
+        "washerDryer": "Кир жуу жана кургаткыч",
+        "balcony": "Балкон",
+        "airConditioning": "Кондиционер",
+        "tv": "Телевизор",
+        "hardwoodFloor": "Ағаш тикмечеси",
+        "fullKitchen": "Толук ашкана",
+        "kitchenUtensils": "Ашкана шаймандары",
+        "dishwasher": "Жуучу машина",
+        "coffeeMaker": "Кофе даярдоочу",
+        "microwave": "Микротолкундуу меш",
+        "refrigerator": "Муздаткыч",
+        "oven": "Меш",
+        "stove": "Кузнец",
+        "parking": "Токтоо акысыз",
+        "swimmingPool": "Жүзүүчү бассейн",
+        "hotTub": "Гарячая ванна",
+        "gym": "Спортзал",
+        "elevator": "Лифт",
+        "security": "Коопсуздук",
+        "wheelchairAccessible": "Инвалиддер үчүн жеткиликтүү",
+        "petFriendly": "Үй жаныбарларына ыңгайлуу",
+        "fireplace": "Камин"
+    },
+    "Bookmarks": {
+        "buttonAddTxt": "Объектти букмарк кылуу",
+        "buttonRemoveTxt": "Букмаркты алып салуу",
+        "notFound": "Букмарк кылынган объекттер табылган жок"
+    },
+    "ContactProperty": {
+        "header": "Объект ээси менен байланышуу",
+        "loginMsg": "Кабар жиберүү үчүн кирүү керек",
+        "msgSent": "Кабар жиберилди",
+        "msgSentSuccess": "Сиздин кабарыңыз ийгиликтүү жиберилди",
+        "nameLbl": "Аты",
+        "namePlaceholder": "Атыңызды киргизиңиз",
+        "emailLbl": "Электрондук почта",
+        "emailPlaceholder": "Электрондук почтаңызды киргизиңиз",
+        "phoneLbl": "Телефон",
+        "phonePlaceholder": "Телефонуңузду киргизиңиз",
+        "messageLbl": "Кабар",
+        "messagePlaceholder": "Кабарңызды киргизиңиз",
+        "sendBtn": "Кабар жиберүү"
+    },
+    "ShareProperty": {
+        "header": "Бөлүшүү:"
+    }
+}

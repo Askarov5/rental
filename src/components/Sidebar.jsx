@@ -13,7 +13,7 @@ import {
 
 const navigation = [
   {
-    
+
     name: "Dashboard",
     href: "/dashboard",
     icon: FaUserAlt,
@@ -68,10 +68,10 @@ const Sidebar = () => {
   navigation.filter((item) => item.name === "Messages")[0].count = unreadCount;
 
   // update the current navigation item based on the current route
-    const currentPath = usePathname();
-    navigation.forEach((item) => {
-        item.current = currentPath === item.href;
-    });
+  const currentPath = usePathname();
+  navigation.forEach((item) => {
+    item.current = currentPath === item.href;
+  });
 
   return (
     <div className="flex grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white h-full">

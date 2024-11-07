@@ -12,9 +12,12 @@ import PropertyImages from "@/components/PropertyImages";
 import BookMarkButton from "@/components/BookMarkButton";
 import ShareButtons from "@/components/ShareButtons";
 import PropertyContactForm from "@/components/PropertyContactForm";
+import { useTranslations } from "next-intl";
 
 const PropertyPage = () => {
   const { id } = useParams();
+
+  const t = useTranslations('Breadcrumbs')
 
   const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -39,7 +42,7 @@ const PropertyPage = () => {
   if (!property && !loading) {
     return (
       <h1 className="text-center text-2xl font-bold mt-10">
-        Property Not Found
+        {t('notFound')}
       </h1>
     );
   }
@@ -58,7 +61,7 @@ const PropertyPage = () => {
                 href="/properties"
                 className="text-blue-500 hover:text-blue-600 flex items-center"
               >
-                <FaArrowLeft className="mr-2" /> Back to Properties
+                <FaArrowLeft className="mr-2" /> {t('backToProps')}
               </Link>
             </div>
           </section>

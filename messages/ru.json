@@ -67,6 +67,7 @@
   "LocaleSwitcher": {
     "ru": "Русский",
     "en": "English",
+    "kg": "Кыргызча",
     "label": "Language"
   },
   "DashboardSidebar": {
@@ -104,7 +105,11 @@
     "notFound": "Недавние объекты не найдены",
     "viewAll": "Просмотреть все объекты"
   },
+  "Breadcrumbs": {
+    "backToProps": "Назад к объектам"
+  },
   "PropertyDetails": {
+    "notFound": "Объект не найден",
     "title": "Подробности о недвижимости",
     "description": "Описание",
 
@@ -152,8 +157,26 @@
     "fireplace": "Камин"
   },
   "Bookmarks": {
-    "buttonAddTxt": "Bookmark Property",
-    "buttonRemoveTxt": "Remove Bookmark",
-    "notFound": "No Bookmarked Properties Found"
+    "buttonAddTxt": "Добавить в закладки",
+    "buttonRemoveTxt": "Удалить закладку",
+    "notFound": "Не найдено"
+  },
+  "ContactProperty": {
+    "header": "Связаться с менеджером по недвижимости",
+    "loginMsg": "Вы должны войти в систему, чтобы отправить сообщение",
+    "msgSent": "Сообщение отправлено",
+    "msgSentSuccess": "Ваше сообщение было успешно отправлено",
+    "nameLbl": "Имя",
+    "namePlaceholder": "Введите ваше имя",
+    "emailLbl": "Электронная почта",
+    "emailPlaceholder": "Введите вашу электронную почту",
+    "phoneLbl": "Телефон",
+    "phonePlaceholder": "Введите ваш номер телефона",
+    "messageLbl": "Сообщение",
+    "messagePlaceholder": "Введите ваше сообщение",
+    "sendBtn": "Отправить"
+  },
+  "ShareProperty": {
+    "header": "Поделиться:"
   }
 }

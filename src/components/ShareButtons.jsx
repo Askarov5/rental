@@ -1,3 +1,4 @@
+import { useTranslations } from "next-intl";
 import {
   FacebookShareButton,
   WhatsappShareButton,
@@ -13,10 +14,12 @@ const ShareButtons = ({ property }) => {
   const shareUrl = `${process.env.NEXT_PUBLIC_DOMAIN}/property/${property._id}`;
   const title = property.name;
 
+  const t = useTranslations("ShareProperty")
+
   return (
     <>
       <h3 className="text-xl font-bold text-center pt-2">
-        Share This Property
+        {t('header')}
       </h3>
       <div className="flex gap-3 justify-center pb-5">
         <FacebookShareButton

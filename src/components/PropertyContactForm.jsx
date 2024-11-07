@@ -4,6 +4,7 @@ import { useState } from "react";
 import { FaPaperPlane } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useSession } from "next-auth/react";
+import { useTranslations } from "next-intl";
 
 const PropertyContactForm = ({ property }) => {
   const { data: session } = useSession();
@@ -13,6 +14,8 @@ const PropertyContactForm = ({ property }) => {
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
   const [wasSubmitted, setWasSubmitted] = useState(false);
+
+  const t = useTranslations("ContactProperty")
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,13 +63,14 @@ const PropertyContactForm = ({ property }) => {
 
   return (
     <div className="bg-white p-6 rounded-md shadow-md">
-      <h3 className="text-xl font-bold mb-6">Contact Property Manager</h3>
+      <h3 className="text-xl font-bold mb-6">{t('header')}</h3>
       {!session ? (
         <div
           className="bg-orange-100 border-l-4 border-orange-500 text-orange-700 p-4 mb-4"
           role="alert"
         >
           <p className="font-bold">
+          {t('loginMsg')}
             You must be logged in to send a message
           </p>
         </div>
@@ -75,8 +79,8 @@ const PropertyContactForm = ({ property }) => {
           className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-4"
           role="alert"
         >
-          <p className="font-bold">Message Sent</p>
-          <p>Your message was sent successfully</p>
+          <p className="font-bold">{t('msgSent')}</p>
+          <p>{t('msgSentSuccess')}</p>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
@@ -85,13 +89,13 @@ const PropertyContactForm = ({ property }) => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="name"
             >
-              Name:
+              {t('nameLbl')}:
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="name"
               type="text"
-              placeholder="Enter your name"
+              placeholder={t('namePlaceholder')}
               maxLength={30}
               minLength={3}
               required
@@ -104,14 +108,14 @@ const PropertyContactForm = ({ property }) => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="email"
             >
-              Email:
+              {t('emailLbl')}:
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               id="email"
               type="email"
               minLength={3}
-              placeholder="Enter your email"
+              placeholder={t('emailPlaceholder')}
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -122,7 +126,7 @@ const PropertyContactForm = ({ property }) => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="phone"
             >
-              Phone:
+              {t('phoneLbl')}:
             </label>
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
@@ -130,7 +134,7 @@ const PropertyContactForm = ({ property }) => {
               type="text"
               maxLength={15}
               minLength={10}
-              placeholder="Enter your phone number"
+              placeholder={t('phonePlaceholder')}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
@@ -140,13 +144,13 @@ const PropertyContactForm = ({ property }) => {
               className="block text-gray-700 text-sm font-bold mb-2"
               htmlFor="message"
             >
-              Message:
+              {t('messageLbl')}:
             </label>
             <textarea
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 h-44 focus:outline-none focus:shadow-outline"
               id="message"
               maxLength={500}
-              placeholder="Enter your message"
+              placeholder={t('messagePlaceholder')}
               value={message}
               onChange={(e) => setMessage(e.target.value)}
             ></textarea>
@@ -156,7 +160,7 @@ const PropertyContactForm = ({ property }) => {
               className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md w-full focus:outline-none focus:shadow-outline flex items-center justify-center"
               type="submit"
             >
-              <FaPaperPlane className=" mr-2"></FaPaperPlane> Send Message
+              <FaPaperPlane className=" mr-2"></FaPaperPlane> {t('sendBtn')}
             </button>
           </div>
         </form>
