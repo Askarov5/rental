@@ -67,6 +67,7 @@
   "LocaleSwitcher": {
     "ru": "Русский",
     "en": "English",
+    "kg": "Кыргызча",
     "label": "Language"
   },
   "DashboardSidebar": {
@@ -103,7 +104,11 @@
     "notFound": "No Recent Properties Found",
     "viewAll": "View All Properties"
   },
+  "Breadcrumbs": {
+    "backToProps": "Back to Properties"
+  },
   "PropertyDetails": {
+    "notFound": "Property not found",
     "title": "Property Details",
     "description": "Description",
     "ratesOptions": "Rates & Options",
@@ -151,6 +156,25 @@
   },
   "Bookmarks": {
     "buttonAddTxt": "Bookmark Property",
+    "buttonRemoveTxt": "Remove Bookmark",
     "notFound": "No Bookmarked Properties Found"
+  },
+  "ContactProperty": {
+    "header": "Contact Property Manager",
+    "loginMsg": "You must be logged in to send a message",
+    "msgSent": "Message Sent",
+    "msgSentSuccess": "Your message was sent successfully",
+    "nameLbl": "Name",
+    "namePlaceholder": "Enter your name",
+    "emailLbl": "Email",
+    "emailPlaceholder": "Enter your email",
+    "phoneLbl": "Phone",
+    "phonePlaceholder": "Enter your phone number",
+    "messageLbl": "Message",
+    "messagePlaceholder": "Enter your message",
+    "sendBtn": "Send Message"
+  },
+  "ShareProperty": {
+    "header": "Share:"
   }
 }
