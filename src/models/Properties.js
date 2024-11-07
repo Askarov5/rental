@@ -32,6 +32,14 @@ const PropertySchema = new Schema(
         type: String,
       },
     },
+    coordinates: {
+      lat: {
+        type: Number
+      },
+      lon: {
+        type: Number
+      }
+    },
     beds: {
       type: Number,
       required: true,

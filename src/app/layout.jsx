@@ -7,7 +7,7 @@ import Navbar from "@/components/Navbar";
 import AuthProvider from "@/providers/AuthProvider";
 
 import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import 'react-toastify/ReactToastify.min.css';
 import { GlobalProvider } from "@/context/GlobalContext";
 
 const MainLayout = async ({ children }) => {

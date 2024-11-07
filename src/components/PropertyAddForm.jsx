@@ -13,6 +13,10 @@ const PropertyAddForm = () => {
       state: "",
       zipcode: "",
     },
+    coordinates: {
+      lat: 0,
+      lon: 0
+    },
     beds: 1,
     baths: 1,
     square_feet: 0,
@@ -29,6 +33,18 @@ const PropertyAddForm = () => {
     images: [],
     is_featured: false,
   });
+
+  const [point, setPoint] = useState(null);
+
+    useEffect(() => {
+        const getGeoCode = () => fetch(`https://catalog.api.2gis.com/3.0/items/geocode?q=${address}&fields=items.point,items.geometry.centroid&key=${GIS_API_KEY}`)
+            .then((res) => res.json())
+            .then(res => {
+                const point = res.result.items[0].point
+                setPoint(point)
+            })
+        getGeoCode();
+    }, [fields.location.city])
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,6 +67,7 @@ const PropertyAddForm = () => {
       });
     }
   };
+
   const handleAmenitiesChange = (e) => {
     const { name, value, checked } = e.target;
     let updatedAmenities = [];
@@ -67,6 +84,7 @@ const PropertyAddForm = () => {
       amenities: updatedAmenities,
     });
   };
+
   const handleImageChange = (e) => {
     const files = Array.from(e.target.files);
 

@@ -9,6 +9,7 @@ import {
 import PropertyMap from "./PropertyMap";
 import PropertyTypeLabel from "./PropertyTypeLabel";
 import { useTranslations } from "next-intl";
+import { Map } from "./Map/Map";
 
 const PropertyDetails = ({ property }) => {
 
@@ -90,7 +91,7 @@ const PropertyDetails = ({ property }) => {
         </ul>
       </div>
       <div className="bg-white p-6 rounded-md shadow-md mt-6">
-        <PropertyMap property={property}/>
+        <Map address={`${property?.street} ${property?.city}`} />
       </div>
     </main>
   );

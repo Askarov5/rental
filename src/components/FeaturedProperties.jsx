@@ -1,12 +1,15 @@
 import { fetchProperties } from "@/utils/request";
 import FeaturedPropertyCard from "./FeaturedPropertyCard";
 import { getTranslations } from "next-intl/server";
+import geoCoder from "@/utils/geoCoder";
 
 const FeaturedProperties = async () => {
   const data = await fetchProperties({ showFeatured: true });
   const properties = data?.properties;
 
   const t = await getTranslations("FeaturedProperties");
+
+  const geoCode = geoCoder('Асаналиева, 28 , ​Ленинский район Бишкек​ Бишкек​')
 
   return (
     properties ? (
