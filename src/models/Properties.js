@@ -21,9 +21,11 @@ const PropertySchema = new Schema(
     location: {
       street: {
         type: String,
+        required: true
       },
       city: {
         type: String,
+        required: true
       },
       state: {
         type: String,
@@ -40,7 +42,7 @@ const PropertySchema = new Schema(
       type: Number,
       required: true,
     },
-    square_feet: {
+    square_meter: {
       type: Number,
       required: true,
     },

@@ -72,8 +72,8 @@ const FeaturedPropertyCard = ({ property }) => {
             </p>
             <p>
               <FaRulerCombined className="inline mr-1 text-blue-600" />
-              {property.square_feet}{" "}
-              <small className="md:hidden lg:inline">{t("sqft")}</small>
+              {property.square_meter}{" "}
+              <small className="md:hidden lg:inline">м<sup>2</sup></small>
             </p>
           </div>
 

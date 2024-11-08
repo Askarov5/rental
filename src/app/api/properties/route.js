@@ -72,7 +72,7 @@ export const POST = async (request) => {
       },
       beds: formData.get("beds"),
       baths: formData.get("baths"),
-      square_feet: formData.get("square_feet"),
+      square_meter: formData.get("square_meter"),
       amenities,
       rates: {
         nightly: formData.get("rates.nightly"),

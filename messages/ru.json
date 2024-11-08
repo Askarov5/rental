@@ -52,7 +52,7 @@
     "room": "Комната"
   },
   "PropertyCard": {
-    "bedrooms": "Комнаты",
+    "bedrooms": "Комн.",
     "studio": "Студия",
     "bathrooms": "Ванные",
     "sqft": "кв. футов",
@@ -121,7 +121,7 @@
     "sqft": "kв. футов",
     "bedrooms": "Комнаты",
     "studio": "Cтудия",
-    "bathrooms": "Ванные комнаты",
+    "bathrooms": "Ванные",
     "sharedBathroom": "Общая ванная комната",
 
     "amenities": "Удобства и услуги",

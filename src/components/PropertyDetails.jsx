@@ -68,15 +68,15 @@ const PropertyDetails = ({ property }) => {
             <span>
               <FaBed className="inline" /> {property.beds}{" "}
             </span>
-            <span className="hidden sm:inline"> {t('bedrooms')}</span>
+            <small className="hidden sm:inline"> {t('bedrooms')}</small>
           </p>
           <p>
             {<FaBath className="inline" />} {property.baths}
-            <span className="hidden sm:inline"> {t('bathrooms')} </span>
+            <small className="hidden sm:inline"> {t('bathrooms')} </small>
           </p>
           <p>
-            {<FaRulerCombined className="inline" />} {property.square_feet}{" "}
-            <span className="hidden sm:inline"> {t("sqft")}</span>
+            {<FaRulerCombined className="inline" />} {property.square_meter}{" "}
+            <small className="hidden sm:inline">м<sup>2</sup></small>
           </p>
         </div>
         <p className="text-gray-500 mb-4 text-center">{property.description}</p>

@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import "@/assets/styles/globals.css";
 import Navbar from "@/components/Navbar";
 import AuthProvider from "@/providers/AuthProvider";
-
 import { ToastContainer } from "react-toastify";
 import { GlobalProvider } from "@/context/GlobalContext";
 

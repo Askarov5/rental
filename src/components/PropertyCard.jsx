@@ -25,7 +25,7 @@ const PropertyCard = ({ property }) => {
       href={`/properties/${property._id}`}
       className="rounded-lg shadow-md hover:shadow-xl transition-shadow relative"
     >
-      <div className="w-full max-h-[300px] overflow-hidden object-center">
+      <div className="w-full max-h-[200px] overflow-hidden object-center flex items-center">
         <Image
           src={property.images[0] || PropertyPlaceHolderImage}
           alt=""
@@ -83,8 +83,8 @@ const PropertyCard = ({ property }) => {
           </p>
           <p className="text-lg">
             <FaRulerCombined className="inline mr-1 text-blue-600" />
-            {property.square_feet}{" "}
-            <small className="md:hidden lg:inline">{t("sqft")}</small>
+            {property.square_meter}{" "}
+            <small className="md:hidden lg:inline">м<sup>2</sup></small>
           </p>
         </div>
 
