@@ -27,8 +27,8 @@ const InfoBoxes = () => {
               ariaLabel: "Browse properties for renters", // Improve accessibility
             }}
           >
-            <ul className=" font-light flex flex-row items-start py-4 space-x-2">
-              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
+            <ul className=" font-light flex flex-row gap-1 items-start py-4 space-x-2">
+              <li className="flex basis-1 grow gap-2 flex-wrap justify-center items-center text-center">
                 <span aria-hidden="true">
                   <FaSearch className="text-3xl" />{" "}
                   {/* Increase icon size for better visibility */}
@@ -36,14 +36,14 @@ const InfoBoxes = () => {
                 <span>{t('searchTxt')}</span>{" "}
                 {/* Make the action clearer */}
               </li>
-              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
+              <li className="flex basis-1 grow gap-2 flex-wrap justify-center items-center text-center">
                 <span aria-hidden="true">
                   <FaBookmark className="text-3xl" />
                 </span>
                 <span>{t('saveTxt')}</span>{" "}
                 {/* Clarify the benefit */}
               </li>
-              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
+              <li className="flex basis-1 grow gap-2 flex-wrap justify-center items-center text-center">
                 <span aria-hidden="true">
                   <FaEnvelope className="text-3xl" />
                 </span>
@@ -62,20 +62,20 @@ const InfoBoxes = () => {
               text: ownerBtnTxt,
             }}
           >
-            <ul className="font-light flex flex-row items-start py-4 space-x-2 ">
-              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center ">
+            <ul className="font-light flex gap-1 flex-row items-start py-4 space-x-2">
+              <li className="flex basis-1 grow gap-2 flex-wrap justify-center items-center text-center ">
                 <span>
                   <FaListAlt className="text-2xl text-blue-600" />
                 </span>
                 <span>{t('listTxt')}</span>
               </li>
-              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
+              <li className="flex basis-1 grow  gap-2   flex-wrap justify-center items-center text-center">
                 <span>
                   <FaCalendarAlt className="text-2xl  text-blue-600" />
                 </span>
                 <span>{t('termsTxt')}</span>
               </li>
-              <li className="flex basis-1 grow py-1 flex-wrap space-y-2 justify-center items-center text-center">
+              <li className="flex basis-1 grow gap-2   flex-wrap justify-center items-center text-center">
                 <span>
                   <FaPhone className="text-2xl  text-blue-600" />
                 </span>

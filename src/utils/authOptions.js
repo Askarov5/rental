@@ -1,6 +1,7 @@
 import connectDB from "@/config/database";
 import User from "@/models/User";
 import GoogleProvider from "next-auth/providers/google";
+import YandexProvider from "next-auth/providers/yandex";
 
 export const authOptions = {
   providers: [
@@ -15,6 +16,10 @@ export const authOptions = {
         },
       },
     }),
+    YandexProvider({
+      clientId: process.env.YANDEX_CLIENT_ID,
+      clientSecret: process.env.YANDEX_CLIENT_SECRET
+    })
   ],
   callbacks: {
     // Invoked on successfull sign in

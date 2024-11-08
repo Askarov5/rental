@@ -9,6 +9,7 @@ import { signIn, signOut, useSession, getProviders } from "next-auth/react";
 import UnreadMessageCount from "./UnreadMessageCount";
 import LocaleSwitcher from "./LocaleSwitcher";
 import {useTranslations} from 'next-intl';
+import SignInSignUpDropdown from "./SignInSignUpDropdown";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -117,17 +118,7 @@ const Navbar = () => {
           {!session && (
             <div className="hidden md:block md:ml-6">
               <div className="flex items-center">
-                {providers &&
-                  Object.values(providers).map((provider, index) => (
-                    <button
-                      onClick={() => signIn(provider.id)}
-                      key={index}
-                      className="flex items-center text-white bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
-                    >
-                      <FaGoogle className="text-white mr-2"></FaGoogle>
-                      <span>{t('login')}</span>
-                    </button>
-                  ))}
+                  <SignInSignUpDropdown />
               </div>
             </div>
           )}
@@ -280,7 +271,7 @@ const Navbar = () => {
                 pathname === "/" ? "after:scale-x-100" : ""
               } rounded-md px-3 py-2 text-base font-medium uppercase text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
             >
-              HOME
+              {t('home')}
             </Link>
             <Link
               href="/properties"
@@ -288,7 +279,7 @@ const Navbar = () => {
                 pathname === "/properties" ? "after:scale-x-100": ""
               } rounded-md px-3 py-2 text-base font-medium uppercase text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
             >
-              PROPERTIES
+              {t('properties')}
             </Link>
             {session && (
               <Link
@@ -297,7 +288,7 @@ const Navbar = () => {
                   pathname === "/dashboard/add-property" ? "after:scale-x-100" : ""
                 } rounded-md px-3 py-2 text-base font-medium uppercase text-blue-700 relative w-fit block after:block after:content-[''] after:absolute after:h-[3px] after:bg-blue-600 after:w-full after:scale-x-0 after:hover:scale-x-100 after:transition after:duration-300 after:origin-left`}
               >
-                ADD PROPERTY
+                {t('listProperty')}
               </Link>
             )}
 
@@ -310,7 +301,7 @@ const Navbar = () => {
                   className="flex items-center text-white uppercase bg-gray-700 hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
                 >
                   <FaGoogle className="text-white mr-2"></FaGoogle>
-                  <span>LOGIN/REGISTER</span>
+                  <span>{t('login')}</span>
                 </button>
               ))}
           </div>
